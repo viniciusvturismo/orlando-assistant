@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "description": "Contextos operacionais de teste — snapshots realistas de diferentes momentos do dia",
+    "version": "1.0.0",
+    "date_reference": "2025-07-15",
+    "contexts": 5
+  },
+
+  "test_contexts": {
+
+    "ctx_morning_busy": {
+      "context_id": "ctx_morning_busy",
+      "_label": "Manhã cheia — 10h30, dia de verão, ensolarado",
+      "_scenario": "Família chega após o rope drop. Filas já cresceram mas ainda manejáveis.",
+      "group_id": "grp_p2_school_kids",
+      "current_park_id": "magic_kingdom",
+      "current_datetime": "2025-07-15T10:30:00",
+      "current_location_area": "fantasyland",
+      "weather": "sunny",
+      "crowd_level": "high",
+      "special_event": null,
+      "active_states": [],
+      "done_attractions": ["pirates_of_the_caribbean"],
+      "closed_attractions": [],
+      "queue_snapshot": {
+        "seven_dwarfs_mine_train":    55,
+        "space_mountain":             45,
+        "tron_lightcycle_run":        95,
+        "big_thunder_mountain":       30,
+        "haunted_mansion":            45,
+        "peter_pan_flight":           60,
+        "its_a_small_world":          12,
+        "buzz_lightyear":             25,
+        "dumbo":                      35,
+        "tiana_bayou_adventure":      40,
+        "jungle_cruise":              30,
+        "barnstormer":                15,
+        "tomorrowland_speedway":      20,
+        "under_the_sea":              18,
+        "enchanted_tales_belle":      35,
+        "liberty_belle_riverboat":     8,
+        "carousel_of_progress":        5
+      },
+      "queue_snapshot_at": "2025-07-15T10:28:00",
+      "filter_override": null
+    },
+
+    "ctx_peak_heat": {
+      "context_id": "ctx_peak_heat",
+      "_label": "Pico de calor — 13h15, sol forte, grupo com crianças cansadas",
+      "_scenario": "Depois do almoço. Calor intenso, crianças reclamando. Grupo precisa de opções indoor.",
+      "group_id": "grp_p2_school_kids",
+      "current_park_id": "magic_kingdom",
+      "current_datetime": "2025-07-15T13:15:00",
+      "current_location_area": "main_street",
+      "weather": "sunny",
+      "crowd_level": "very_high",
+      "special_event": null,
+      "active_states": ["hot", "tired"],
+      "done_attractions": [
+        "pirates_of_the_caribbean",
+        "seven_dwarfs_mine_train",
+        "barnstormer"
+      ],
+      "closed_attractions": [],
+      "queue_snapshot": {
+        "seven_dwarfs_mine_train":    90,
+        "space_mountain":             65,
+        "tron_lightcycle_run":       120,
+        "big_thunder_mountain":       55,
+        "haunted_mansion":            30,
+        "peter_pan_flight":           75,
+        "its_a_small_world":          15,
+        "buzz_lightyear":             30,
+        "dumbo":                      45,
+        "tiana_bayou_adventure":      60,
+        "jungle_cruise":              50,
+        "tomorrowland_speedway":      25,
+        "under_the_sea":              20,
+        "enchanted_tales_belle":      55,
+        "liberty_belle_riverboat":    10,
+        "carousel_of_progress":        5
+      },
+      "queue_snapshot_at": "2025-07-15T13:10:00",
+      "filter_override": {
+        "intensity": "low",
+        "environment": "indoor",
+        "max_queue_minutes": null,
+        "for_all_members": false
+      }
+    },
+
+    "ctx_afternoon_teens": {
+      "context_id": "ctx_afternoon_teens",
+      "_label": "Tarde — 15h45, grupo com adolescentes, filas moderadas",
+      "_scenario": "Grupo P3 em Tomorrowland depois de já ter feito Tron e Space. Quer continuar a sequência de thrills.",
+      "group_id": "grp_p3_teens",
+      "current_park_id": "magic_kingdom",
+      "current_datetime": "2025-07-15T15:45:00",
+      "current_location_area": "tomorrowland",
+      "weather": "cloudy",
+      "crowd_level": "moderate",
+      "special_event": null,
+      "active_states": [],
+      "done_attractions": [
+        "tron_lightcycle_run",
+        "space_mountain",
+        "buzz_lightyear"
+      ],
+      "closed_attractions": ["barnstormer"],
+      "queue_snapshot": {
+        "seven_dwarfs_mine_train":    50,
+        "big_thunder_mountain":       25,
+        "haunted_mansion":            20,
+        "pirates_of_the_caribbean":   15,
+        "peter_pan_flight":           45,
+        "its_a_small_world":          10,
+        "dumbo":                      20,
+        "tiana_bayou_adventure":      55,
+        "jungle_cruise":              25,
+        "tomorrowland_speedway":      15,
+        "under_the_sea":              12,
+        "enchanted_tales_belle":      40,
+        "liberty_belle_riverboat":     5,
+        "carousel_of_progress":        0
+      },
+      "queue_snapshot_at": "2025-07-15T15:40:00",
+      "filter_override": null
+    },
+
+    "ctx_end_of_day": {
+      "context_id": "ctx_end_of_day",
+      "_label": "Fim do dia — 21h30, parque fecha às 23h, filas mínimas",
+      "_scenario": "Grupo P7 nos últimos 90 min. Muitas atrações já fechadas. Quer maximizar o que ainda dá.",
+      "group_id": "grp_p7_adrenaline",
+      "current_park_id": "magic_kingdom",
+      "current_datetime": "2025-07-15T21:30:00",
+      "current_location_area": "fantasyland",
+      "weather": "cloudy",
+      "crowd_level": "low",
+      "special_event": null,
+      "active_states": [],
+      "done_attractions": [
+        "tron_lightcycle_run",
+        "space_mountain",
+        "big_thunder_mountain",
+        "tiana_bayou_adventure",
+        "haunted_mansion",
+        "pirates_of_the_caribbean"
+      ],
+      "closed_attractions": [
+        "tomorrowland_speedway",
+        "enchanted_tales_belle",
+        "liberty_belle_riverboat",
+        "carousel_of_progress",
+        "dumbo"
+      ],
+      "queue_snapshot": {
+        "seven_dwarfs_mine_train":    15,
+        "peter_pan_flight":           20,
+        "its_a_small_world":           5,
+        "buzz_lightyear":             10,
+        "jungle_cruise":               8,
+        "under_the_sea":               5,
+        "barnstormer":                 0
+      },
+      "queue_snapshot_at": "2025-07-15T21:25:00",
+      "filter_override": null
+    },
+
+    "ctx_multigem_midday": {
+      "context_id": "ctx_multigem_midday",
+      "_label": "Família multigeracional — 11h, mistura de perfis, alguns cansados",
+      "_scenario": "Grupo P6 com avós. Vovós já cansados, crianças animadas, pais tentando equilibrar.",
+      "group_id": "grp_p6_multigenerational",
+      "current_park_id": "magic_kingdom",
+      "current_datetime": "2025-07-15T11:00:00",
+      "current_location_area": "liberty_square",
+      "weather": "sunny",
+      "crowd_level": "high",
+      "special_event": null,
+      "active_states": ["tired"],
+      "done_attractions": [
+        "its_a_small_world",
+        "dumbo",
+        "enchanted_tales_belle"
+      ],
+      "closed_attractions": [],
+      "queue_snapshot": {
+        "seven_dwarfs_mine_train":    60,
+        "space_mountain":             50,
+        "tron_lightcycle_run":       100,
+        "big_thunder_mountain":       35,
+        "haunted_mansion":            40,
+        "pirates_of_the_caribbean":   20,
+        "peter_pan_flight":           55,
+        "buzz_lightyear":             28,
+        "tiana_bayou_adventure":      45,
+        "jungle_cruise":              30,
+        "barnstormer":                20,
+        "tomorrowland_speedway":      25,
+        "under_the_sea":              15,
+        "liberty_belle_riverboat":     8,
+        "carousel_of_progress":        5
+      },
+      "queue_snapshot_at": "2025-07-15T10:55:00",
+      "filter_override": null
+    }
+  }
+}

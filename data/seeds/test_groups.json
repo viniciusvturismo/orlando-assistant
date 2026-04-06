@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "description": "Perfis de grupos de teste para o MVP — famílias brasileiras no Magic Kingdom",
+    "version": "1.0.0",
+    "profiles": 7
+  },
+  "test_groups": {
+
+    "grp_p1_toddlers": {
+      "group_id": "grp_p1_toddlers",
+      "whatsapp_number": "+5511991110001",
+      "park_id": "magic_kingdom",
+      "visit_date": "2025-07-15",
+      "language": "pt-BR",
+      "profile_id": "P1",
+      "setup_complete": true,
+      "_label": "P1 — Família com bebê e criança pequena",
+      "members": [
+        {"role": "adult", "age": 32, "name": "Juliana"},
+        {"role": "adult", "age": 34, "name": "Roberto"},
+        {"role": "child", "age": 4, "height_cm": 98, "name": "Luana"},
+        {"role": "infant", "name": "Theo"}
+      ],
+      "preferences": {
+        "pref_id": "pref_p1_toddlers",
+        "intensity_preference": "low",
+        "priority_order": ["low_queue", "character_meet", "indoor", "experience"],
+        "avoid_types": ["spinning", "thrill", "extreme", "dark_intense"],
+        "max_queue_minutes": 25,
+        "must_do_attractions": ["dumbo", "enchanted_tales_belle", "its_a_small_world"],
+        "skip_attractions": ["tron_lightcycle_run", "space_mountain", "big_thunder_mountain"],
+        "show_interest": true,
+        "meal_break_times": ["12:00", "17:00"],
+        "allow_group_split": false
+      }
+    },
+
+    "grp_p2_school_kids": {
+      "group_id": "grp_p2_school_kids",
+      "whatsapp_number": "+5521999990002",
+      "park_id": "magic_kingdom",
+      "visit_date": "2025-07-15",
+      "language": "pt-BR",
+      "profile_id": "P2",
+      "setup_complete": true,
+      "_label": "P2 — Família mista com crianças 7 e 9 anos",
+      "members": [
+        {"role": "adult", "age": 38, "name": "Ana"},
+        {"role": "adult", "age": 40, "name": "Carlos"},
+        {"role": "child", "age": 7, "height_cm": 118, "name": "Mariana"},
+        {"role": "child", "age": 9, "height_cm": 132, "name": "Pedro"}
+      ],
+      "preferences": {
+        "pref_id": "pref_p2_school",
+        "intensity_preference": "moderate",
+        "priority_order": ["low_queue", "iconic", "thrill_moderate", "character_meet"],
+        "avoid_types": ["extreme"],
+        "max_queue_minutes": 45,
+        "must_do_attractions": ["seven_dwarfs_mine_train", "haunted_mansion", "pirates_of_the_caribbean"],
+        "skip_attractions": [],
+        "show_interest": true,
+        "meal_break_times": ["12:30", "17:30"],
+        "allow_group_split": true
+      }
+    },
+
+    "grp_p3_teens": {
+      "group_id": "grp_p3_teens",
+      "whatsapp_number": "+5531988880003",
+      "park_id": "magic_kingdom",
+      "visit_date": "2025-07-15",
+      "language": "pt-BR",
+      "profile_id": "P3",
+      "setup_complete": true,
+      "_label": "P3 — Grupo com adolescentes 15 e 17 anos",
+      "members": [
+        {"role": "adult", "age": 45, "name": "Marcos"},
+        {"role": "adult", "age": 43},
+        {"role": "child", "age": 15, "height_cm": 170, "name": "Gabriel"},
+        {"role": "child", "age": 17, "height_cm": 178, "name": "Lucas"}
+      ],
+      "preferences": {
+        "pref_id": "pref_p3_teens",
+        "intensity_preference": "high",
+        "priority_order": ["thrill", "iconic", "low_queue"],
+        "avoid_types": ["infantil", "slow"],
+        "max_queue_minutes": 60,
+        "must_do_attractions": ["tron_lightcycle_run", "space_mountain", "big_thunder_mountain", "tiana_bayou_adventure"],
+        "skip_attractions": ["its_a_small_world", "dumbo", "carousel_of_progress"],
+        "show_interest": false,
+        "meal_break_times": ["13:00"],
+        "allow_group_split": false
+      }
+    },
+
+    "grp_p4_adults_icons": {
+      "group_id": "grp_p4_adults_icons",
+      "whatsapp_number": "+5541977770004",
+      "park_id": "magic_kingdom",
+      "visit_date": "2025-07-15",
+      "language": "pt-BR",
+      "profile_id": "P4",
+      "setup_complete": true,
+      "_label": "P4 — Casal adulto sem filhos, foco nos ícones",
+      "members": [
+        {"role": "adult", "age": 29, "name": "Fernanda"},
+        {"role": "adult", "age": 31, "name": "Rafael"}
+      ],
+      "preferences": {
+        "pref_id": "pref_p4_icons",
+        "intensity_preference": "moderate",
+        "priority_order": ["iconic", "must_do", "low_queue", "thrill"],
+        "avoid_types": [],
+        "max_queue_minutes": 55,
+        "must_do_attractions": ["seven_dwarfs_mine_train", "tron_lightcycle_run", "haunted_mansion", "pirates_of_the_caribbean", "big_thunder_mountain"],
+        "skip_attractions": [],
+        "show_interest": true,
+        "meal_break_times": ["13:00", "18:00"],
+        "allow_group_split": false
+      }
+    },
+
+    "grp_p5_light_pace": {
+      "group_id": "grp_p5_light_pace",
+      "whatsapp_number": "+5551966660005",
+      "park_id": "magic_kingdom",
+      "visit_date": "2025-07-15",
+      "language": "pt-BR",
+      "profile_id": "P5",
+      "setup_complete": true,
+      "_label": "P5 — Casal 60+ com ritmo tranquilo",
+      "members": [
+        {"role": "senior", "age": 63, "name": "Sônia"},
+        {"role": "senior", "age": 65, "name": "José", "mobility_restricted": false}
+      ],
+      "preferences": {
+        "pref_id": "pref_p5_light",
+        "intensity_preference": "low",
+        "priority_order": ["low_queue", "show", "indoor", "experience"],
+        "avoid_types": ["spinning", "thrill", "extreme", "outdoor"],
+        "max_queue_minutes": 20,
+        "must_do_attractions": ["haunted_mansion", "pirates_of_the_caribbean", "carousel_of_progress"],
+        "skip_attractions": ["tron_lightcycle_run", "big_thunder_mountain", "space_mountain", "tiana_bayou_adventure"],
+        "show_interest": true,
+        "meal_break_times": ["11:30", "16:00"],
+        "allow_group_split": false
+      }
+    },
+
+    "grp_p6_multigenerational": {
+      "group_id": "grp_p6_multigenerational",
+      "whatsapp_number": "+5562955550006",
+      "park_id": "magic_kingdom",
+      "visit_date": "2025-07-15",
+      "language": "pt-BR",
+      "profile_id": "P6",
+      "setup_complete": true,
+      "_label": "P6 — Família multigeracional 3 gerações",
+      "members": [
+        {"role": "senior", "age": 68, "name": "Vovó Cida"},
+        {"role": "senior", "age": 70, "name": "Vovô Zé"},
+        {"role": "adult", "age": 40, "name": "Sandro"},
+        {"role": "adult", "age": 38, "name": "Patrícia"},
+        {"role": "child", "age": 8, "height_cm": 125, "name": "Beatriz"},
+        {"role": "child", "age": 5, "height_cm": 103, "name": "Davi"}
+      ],
+      "preferences": {
+        "pref_id": "pref_p6_multigem",
+        "intensity_preference": "mixed",
+        "priority_order": ["shared_experience", "low_queue", "show", "iconic"],
+        "avoid_types": ["extreme", "spinning"],
+        "max_queue_minutes": 30,
+        "must_do_attractions": ["haunted_mansion", "pirates_of_the_caribbean", "its_a_small_world"],
+        "skip_attractions": ["tron_lightcycle_run", "space_mountain"],
+        "show_interest": true,
+        "meal_break_times": ["12:00", "17:00"],
+        "allow_group_split": true
+      }
+    },
+
+    "grp_p7_adrenaline": {
+      "group_id": "grp_p7_adrenaline",
+      "whatsapp_number": "+5571944440007",
+      "park_id": "magic_kingdom",
+      "visit_date": "2025-07-15",
+      "language": "pt-BR",
+      "profile_id": "P7",
+      "setup_complete": true,
+      "_label": "P7 — Grupo de amigos, adrenalina máxima",
+      "members": [
+        {"role": "adult", "age": 26, "name": "Vitor"},
+        {"role": "adult", "age": 28, "name": "Thiago"},
+        {"role": "adult", "age": 25, "name": "Camila"},
+        {"role": "adult", "age": 27, "name": "Bruna"}
+      ],
+      "preferences": {
+        "pref_id": "pref_p7_adrenaline",
+        "intensity_preference": "high",
+        "priority_order": ["thrill", "iconic", "efficiency", "low_queue"],
+        "avoid_types": [],
+        "max_queue_minutes": 75,
+        "must_do_attractions": ["tron_lightcycle_run", "space_mountain", "seven_dwarfs_mine_train", "big_thunder_mountain", "tiana_bayou_adventure"],
+        "skip_attractions": ["its_a_small_world", "dumbo", "carousel_of_progress", "liberty_belle_riverboat"],
+        "show_interest": false,
+        "meal_break_times": ["14:00"],
+        "allow_group_split": false
+      }
+    }
+  }
+}
