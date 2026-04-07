@@ -54,3 +54,15 @@ app.include_router(rec_router)
 @app.get("/health")
 def health():
     return {"status": "ok", "env": settings.env}
+
+
+@app.get("/setup")
+def setup_page():
+    import os
+    from fastapi import Response
+    html_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'index.html')
+    if os.path.exists(html_path):
+        with open(html_path) as f:
+            content = f.read()
+        return Response(content=content, media_type="text/html")
+    return {"error": "page not found"}

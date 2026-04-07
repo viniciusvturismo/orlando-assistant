@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magic Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#F5C842;--gold-dark:#C9A020;--night:#0D0D0F;--surface:#1A1A1F;--surface2:#242429;--border:rgba(245,200,66,0.15);--text:#F0EDE4;--muted:#888880;--radius:14px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--night);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;}
+.app{max-width:480px;margin:0 auto;padding:0 20px 60px;}
+.header{text-align:center;padding:40px 0 28px;}
+.logo{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);}
+.logo span{display:block;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-top:4px;}
+.progress{display:flex;align-items:center;gap:8px;margin-bottom:28px;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);transition:all 0.3s;flex-shrink:0;}
+.dot.active{background:var(--gold);border-color:var(--gold);width:24px;border-radius:4px;}
+.dot.done{background:var(--gold-dark);border-color:var(--gold-dark);}
+.line{flex:1;height:1px;background:var(--border);}
+.title{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:6px;}
+.sub{font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.5;}
+.screen{display:none;}.screen.active{display:block;animation:fadeUp 0.4s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:12px;}
+.label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:13px 15px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:16px;outline:none;transition:border-color 0.2s;-webkit-appearance:none;}
+.input:focus{border-color:var(--gold);}
+.input::placeholder{color:var(--muted);}
+.mrow{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;margin-bottom:8px;}
+.mrow select{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;outline:none;-webkit-appearance:none;width:100%;}
+.rbtn{width:36px;height:36px;background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.add{width:100%;background:none;border:1px dashed var(--border);border-radius:10px;padding:11px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;margin-top:4px;}
+.rhythm{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+.ropt{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:13px 8px;text-align:center;cursor:pointer;transition:all 0.2s;}
+.ropt.sel{background:rgba(245,200,66,0.1);border-color:var(--gold);}
+.ropt .em{font-size:22px;display:block;margin-bottom:5px;}
+.ropt .lb{font-size:11px;font-weight:500;line-height:1.3;}
+.srow{display:flex;align-items:center;gap:12px;}
+.slider{flex:1;-webkit-appearance:none;height:4px;border-radius:2px;background:var(--surface2);outline:none;cursor:pointer;}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--gold);cursor:pointer;border:3px solid var(--night);}
+.sval{font-size:20px;font-weight:500;color:var(--gold);min-width:60px;text-align:right;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.ci{display:flex;align-items:center;gap:9px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:11px 13px;cursor:pointer;transition:all 0.2s;user-select:none;}
+.ci.on{background:rgba(245,200,66,0.08);border-color:var(--gold);}
+.ci input{display:none;}
+.cb{width:17px;height:17px;border-radius:5px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;}
+.ci.on .cb{background:var(--gold);border-color:var(--gold);color:var(--night);}
+.cl{font-size:13px;line-height:1.3;}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:340px;overflow-y:auto;}
+.ac{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:11px;cursor:pointer;transition:all 0.2s;position:relative;}
+.ac.sel{background:rgba(245,200,66,0.1);border-color:var(--gold);}
+.an{font-size:12px;font-weight:500;line-height:1.3;margin-bottom:3px;}
+.am{font-size:10px;color:var(--muted);}
+.ack{position:absolute;top:7px;right:7px;width:15px;height:15px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:8px;}
+.ac.sel .ack{background:var(--gold);border-color:var(--gold);color:var(--night);}
+.hb{display:inline-block;font-size:9px;padding:2px 4px;background:rgba(245,200,66,0.12);color:var(--gold);border-radius:3px;margin-top:2px;}
+.btn{width:100%;background:var(--gold);color:var(--night);border:none;border-radius:var(--radius);padding:17px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;cursor:pointer;margin-top:20px;transition:all 0.2s;}
+.btn:hover{background:#ffd740;}
+.btn:disabled{opacity:0.4;cursor:not-allowed;}
+.btn2{background:none;border:1px solid var(--border);color:var(--muted);border-radius:var(--radius);padding:13px;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;width:100%;margin-top:8px;}
+.sbox{background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);border-radius:var(--radius);padding:20px;text-align:center;margin:20px 0;}
+.wnum{font-size:26px;font-weight:500;letter-spacing:1px;margin:8px 0;}
+.wh{font-size:13px;color:var(--muted);}
+.ilist{list-style:none;margin-top:16px;}
+.ilist li{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid var(--border);font-size:14px;line-height:1.4;}
+.ilist li:last-child{border:none;}
+.sn{width:22px;height:22px;background:var(--gold);color:var(--night);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:1px;}
+.err{color:#ff6b6b;font-size:13px;text-align:center;padding:11px;background:rgba(255,107,107,0.08);border-radius:8px;margin-top:10px;display:none;}
+.ld{display:none;text-align:center;padding:16px;color:var(--muted);font-size:14px;}
+.sp{width:22px;height:22px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 8px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+input[type=date]{color-scheme:dark;}
+.si{width:64px;height:64px;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px;}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="header">
+  <div class="logo">✦ Magic Assistant<span>configure sua visita</span></div>
+</div>
+<div class="progress">
+  <div class="dot active" id="d1"></div><div class="line"></div>
+  <div class="dot" id="d2"></div><div class="line"></div>
+  <div class="dot" id="d3"></div>
+</div>
+
+<!-- TELA 1 -->
+<div class="screen active" id="s1">
+  <div class="title">Quem vai ao parque?</div>
+  <div class="sub">Informe os membros do grupo e a data da visita.</div>
+  <div class="card"><div class="label">Seu WhatsApp</div>
+    <input class="input" type="tel" id="phone" placeholder="+55 21 99999-0000">
+  </div>
+  <div class="card"><div class="label">Data da visita</div>
+    <input class="input" type="date" id="vdate">
+  </div>
+  <div class="card"><div class="label">Membros do grupo</div>
+    <div id="mlist"></div>
+    <button class="add" onclick="addM()">+ Adicionar membro</button>
+  </div>
+  <button class="btn" onclick="go2()">Continuar →</button>
+  <div class="err" id="e1"></div>
+</div>
+
+<!-- TELA 2 -->
+<div class="screen" id="s2">
+  <div class="title">Como vocês curtem?</div>
+  <div class="sub">Personalize as recomendações do seu grupo.</div>
+  <div class="card"><div class="label">Ritmo do grupo</div>
+    <div class="rhythm">
+      <div class="ropt sel" data-v="low" onclick="selR(this)"><span class="em">🐢</span><span class="lb">Tranquilo</span></div>
+      <div class="ropt" data-v="moderate" onclick="selR(this)"><span class="em">⚖️</span><span class="lb">Equilibrado</span></div>
+      <div class="ropt" data-v="high" onclick="selR(this)"><span class="em">🚀</span><span class="lb">Tudo!</span></div>
+    </div>
+  </div>
+  <div class="card"><div class="label">Fila máxima</div>
+    <div class="srow">
+      <input class="slider" type="range" id="mq" min="15" max="90" step="5" value="45"
+        oninput="document.getElementById('qv').textContent=this.value+' min'">
+      <div class="sval" id="qv">45 min</div>
+    </div>
+  </div>
+  <div class="card"><div class="label">O que evitar</div>
+    <div class="cgrid">
+      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="water"><div class="cb">✓</div><span class="cl">Molha</span></label>
+      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="dark"><div class="cb">✓</div><span class="cl">Muito escuro</span></label>
+      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="spinning"><div class="cb">✓</div><span class="cl">Enjoativo</span></label>
+      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="extreme"><div class="cb">✓</div><span class="cl">Radical demais</span></label>
+      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="outdoor"><div class="cb">✓</div><span class="cl">Sol / calor</span></label>
+      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="infantil"><div class="cb">✓</div><span class="cl">Infantil demais</span></label>
+    </div>
+  </div>
+  <div class="card"><div class="label">Must-do — o que não pode perder</div>
+    <div class="agrid" id="agrid"></div>
+  </div>
+  <button class="btn" onclick="go3()">Finalizar configuração →</button>
+  <button class="btn2" onclick="go1()">← Voltar</button>
+  <div class="err" id="e2"></div>
+  <div class="ld" id="ld2"><div class="sp"></div>Configurando seu assistente...</div>
+</div>
+
+<!-- TELA 3 -->
+<div class="screen" id="s3">
+  <div style="text-align:center;padding-top:16px">
+    <div class="si">✓</div>
+    <div class="title">Tudo pronto!</div>
+    <div class="sub" style="margin-top:6px">Seu assistente está configurado.</div>
+  </div>
+  <div class="sbox">
+    <div style="font-size:13px;color:var(--muted)">Salve esse número no WhatsApp</div>
+    <div class="wnum">+1 415 523 8886</div>
+    <div class="wh">Mande qualquer mensagem para começar</div>
+  </div>
+  <div class="card"><div class="label">Como usar no parque</div>
+    <ul class="ilist">
+      <li><div class="sn">1</div><div>Salve o número acima como <strong>Magic Assistant</strong></div></li>
+      <li><div class="sn">2</div><div>Ao entrar, diga onde estão: <em>"chegamos no Fantasyland"</em></div></li>
+      <li><div class="sn">3</div><div>Informe filas que ver: <em>"Mine Train com 45 min"</em></div></li>
+      <li><div class="sn">4</div><div>Siga a recomendação e avise ao sair</div></li>
+    </ul>
+  </div>
+  <button class="btn" onclick="reset()" style="margin-top:14px">Configurar outro grupo</button>
+</div>
+</div>
+
+<script>
+const ATTRS=[
+  {id:'haunted_mansion',n:'Haunted Mansion',a:'Liberty Square',h:0},
+  {id:'seven_dwarfs_mine_train',n:'Seven Dwarfs Mine Train',a:'Fantasyland',h:97},
+  {id:'tron_lightcycle_run',n:'Tron Lightcycle/Run',a:'Tomorrowland',h:107},
+  {id:'space_mountain',n:'Space Mountain',a:'Tomorrowland',h:112},
+  {id:'big_thunder_mountain',n:'Big Thunder Mountain',a:'Frontierland',h:102},
+  {id:'tiana_bayou_adventure',n:"Tiana's Bayou Adventure",a:'Frontierland',h:102},
+  {id:'pirates_of_the_caribbean',n:'Pirates of the Caribbean',a:'Adventureland',h:0},
+  {id:'peter_pan_flight',n:"Peter Pan's Flight",a:'Fantasyland',h:0},
+  {id:'its_a_small_world',n:"it's a small world",a:'Fantasyland',h:0},
+  {id:'jungle_cruise',n:'Jungle Cruise',a:'Adventureland',h:0},
+  {id:'buzz_lightyear',n:"Buzz Lightyear's Space Ranger Spin",a:'Tomorrowland',h:0},
+  {id:'dumbo',n:'Dumbo the Flying Elephant',a:'Storybook Circus',h:0},
+  {id:'enchanted_tales_belle',n:'Enchanted Tales with Belle',a:'Fantasyland',h:0},
+  {id:'under_the_sea',n:'Under the Sea',a:'Fantasyland',h:0},
+  {id:'barnstormer',n:'The Barnstormer',a:'Storybook Circus',h:89},
+  {id:'liberty_belle_riverboat',n:'Liberty Belle Riverboat',a:'Liberty Square',h:0},
+  {id:'carousel_of_progress',n:'Carousel of Progress',a:'Tomorrowland',h:0},
+  {id:'tomorrowland_speedway',n:'Tomorrowland Speedway',a:'Tomorrowland',h:54},
+];
+let members=[],rhythm='low',mustDo=new Set();
+window.onload=()=>{
+  const d=new Date();d.setDate(d.getDate()+30);
+  document.getElementById('vdate').value=d.toISOString().split('T')[0];
+  addM('adult',35);addM('child',8);
+  renderA();
+};
+function addM(role='adult',age=''){
+  const id=Date.now()+Math.random();members.push({id,role,age});renderM();
+}
+function removeM(id){members=members.filter(m=>m.id!==id);renderM();}
+function renderM(){
+  const l=document.getElementById('mlist');l.innerHTML='';
+  members.forEach(m=>{
+    const r=document.createElement('div');r.className='mrow';
+    r.innerHTML=`<select onchange="upM(${m.id},'role',this.value)">
+      <option value="adult" ${m.role==='adult'?'selected':''}>Adulto</option>
+      <option value="child" ${m.role==='child'?'selected':''}>Criança</option>
+      <option value="senior" ${m.role==='senior'?'selected':''}>Idoso</option>
+      <option value="infant" ${m.role==='infant'?'selected':''}>Bebê</option>
+    </select>
+    <input class="input" type="number" placeholder="${m.role==='infant'?'—':'Idade'}"
+      value="${m.age||''}" min="0" max="99" onchange="upM(${m.id},'age',this.value)"
+      ${m.role==='infant'?'disabled':''}>
+    <button class="rbtn" onclick="removeM(${m.id})">×</button>`;
+    l.appendChild(r);
+  });
+}
+function upM(id,f,v){const m=members.find(m=>m.id===id);if(m){m[f]=v;}if(f==='role')renderM();}
+function selR(el){document.querySelectorAll('.ropt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');rhythm=el.dataset.v;}
+function tgC(el){el.classList.toggle('on');}
+function renderA(){
+  const g=document.getElementById('agrid');g.innerHTML='';
+  ATTRS.forEach(a=>{
+    const c=document.createElement('div');c.className='ac';
+    c.onclick=()=>{if(mustDo.has(a.id)){mustDo.delete(a.id);c.classList.remove('sel');}else{mustDo.add(a.id);c.classList.add('sel');}};
+    c.innerHTML=`<div class="ack">✓</div><div class="an">${a.n}</div><div class="am">${a.a}</div>${a.h>0?`<div class="hb">mín. ${a.h}cm</div>`:''}`;
+    g.appendChild(c);
+  });
+}
+function showS(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
+function updD(n){[1,2,3].forEach(i=>{const d=document.getElementById('d'+i);d.className='dot';if(i<n)d.classList.add('done');else if(i===n)d.classList.add('active');});}
+function go1(){showS('s1');updD(1);}
+function go2(){
+  const phone=document.getElementById('phone').value.trim();
+  const date=document.getElementById('vdate').value;
+  const adults=members.filter(m=>m.role==='adult'||m.role==='senior');
+  if(!phone)return err('e1','Informe seu número de WhatsApp');
+  if(!date)return err('e1','Selecione a data da visita');
+  if(!adults.length)return err('e1','Adicione pelo menos um adulto');
+  clrErr('e1');showS('s2');updD(2);
+}
+async function go3(){
+  const avoid=[...document.querySelectorAll('.ci.on input')].map(i=>i.value);
+  const mq=parseInt(document.getElementById('mq').value);
+  setLd(true);clrErr('e2');
+  try{
+    const phone=document.getElementById('phone').value.trim().replace(/[\s\-\(\)]/g,'');
+    const gr=await api('POST','/groups',{whatsapp_number:phone,park_id:'magic_kingdom'});
+    const gid=gr.group_id;
+    const mems=members.map(m=>({role:m.role,age:m.age?parseInt(m.age):undefined})).filter(m=>m.role==='infant'||m.age);
+    await api('PATCH',`/groups/${gid}/members`,{members:mems});
+    await api('PUT',`/groups/${gid}/preferences`,{
+      intensity_preference:rhythm,max_queue_minutes:mq,
+      must_do_attractions:[...mustDo],avoid_types:avoid,
+      priority_order:['must_do','low_queue','iconic'],show_interest:true,
+    });
+    setLd(false);showS('s3');updD(3);
+  }catch(e){setLd(false);err('e2','Erro ao salvar: '+(e.message||'tente novamente'));}
+}
+function err(id,msg){const el=document.getElementById(id);el.textContent=msg;el.style.display='block';}
+function clrErr(id){document.getElementById(id).style.display='none';}
+function setLd(show){document.querySelector('#s2 .btn').disabled=show;document.getElementById('ld2').style.display=show?'block':'none';}
+function reset(){members=[];mustDo=new Set();rhythm='low';addM('adult',35);addM('child',8);document.getElementById('phone').value='';renderA();document.querySelectorAll('.ci').forEach(e=>e.classList.remove('on'));document.querySelectorAll('.ropt').forEach((e,i)=>e.classList.toggle('sel',i===0));go1();}
+async function api(m,p,b){
+  const r=await fetch(p,{method:m,headers:{'Content-Type':'application/json'},body:b?JSON.stringify(b):undefined});
+  if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.detail||'HTTP '+r.status);}
+  return r.json();
+}
+</script>
+</body>
+</html>
