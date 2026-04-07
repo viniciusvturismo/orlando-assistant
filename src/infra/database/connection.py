@@ -16,6 +16,16 @@ def init_db() -> None:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     with get_connection() as conn:
         conn.executescript(_SCHEMA_SQL)
+        # Migration: add status column if not exists
+        try:
+            conn.execute("ALTER TABLE groups ADD COLUMN status TEXT NOT NULL DEFAULT 'active'")
+        except Exception:
+            pass  # Column already exists
+        # Migration: remove UNIQUE constraint workaround - allow multiple rows per phone
+        try:
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_groups_phone ON groups(whatsapp_number)")
+        except Exception:
+            pass
     logger.info("Database initialized at %s", DB_PATH)
 
 
@@ -38,12 +48,13 @@ def get_connection() -> Generator[sqlite3.Connection, None, None]:
 _SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS groups (
     group_id        TEXT PRIMARY KEY,
-    whatsapp_number TEXT NOT NULL UNIQUE,
+    whatsapp_number TEXT NOT NULL,
     park_id         TEXT NOT NULL,
     visit_date      TEXT NOT NULL,
     language        TEXT NOT NULL DEFAULT 'pt-BR',
     profile_id      TEXT,
     setup_complete  INTEGER NOT NULL DEFAULT 0,
+    status          TEXT NOT NULL DEFAULT 'active',
     created_at      TEXT NOT NULL
 );
 

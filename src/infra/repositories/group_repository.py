@@ -13,7 +13,10 @@ class GroupRepository:
     def get_by_phone(self, whatsapp_number: str) -> Optional[Group]:
         with get_connection() as conn:
             row = conn.execute(
-                "SELECT * FROM groups WHERE whatsapp_number = ?", (whatsapp_number,)
+                """SELECT * FROM groups WHERE whatsapp_number = ?
+                   AND (status IS NULL OR status != 'archived')
+                   ORDER BY created_at DESC LIMIT 1""",
+                (whatsapp_number,)
             ).fetchone()
             if not row:
                 return None
@@ -32,29 +35,17 @@ class GroupRepository:
         """Cria ou atualiza grupo pelo número de WhatsApp (upsert)."""
         now = datetime.utcnow().isoformat()
 
-        # Verifica se já existe grupo com esse número
+        # Verifica se já existe grupo ativo com esse número
         existing = self.get_by_phone(whatsapp_number)
         if existing:
-            # Atualiza parque, data e reseta setup
+            # Arquiva o grupo anterior (mantém histórico do cliente)
             with get_connection() as conn:
                 conn.execute(
-                    """UPDATE groups SET park_id = ?, visit_date = ?, setup_complete = 0,
-                       profile_id = NULL, created_at = ? WHERE group_id = ?""",
-                    (park_id, visit_date.isoformat(), now, existing.group_id),
+                    "UPDATE groups SET status = 'archived' WHERE group_id = ?",
+                    (existing.group_id,),
                 )
-                # Limpa membros e preferências anteriores
-                conn.execute("DELETE FROM members WHERE group_id = ?", (existing.group_id,))
-                conn.execute("DELETE FROM group_preferences WHERE group_id = ?", (existing.group_id,))
-            return Group(
-                group_id=existing.group_id,
-                whatsapp_number=whatsapp_number,
-                park_id=park_id,
-                visit_date=visit_date,
-                language=language,
-                created_at=datetime.fromisoformat(now),
-            )
 
-        # Cria novo grupo
+        # Cria novo grupo (sempre — mantém histórico completo)
         group_id = f"grp_{uuid.uuid4().hex[:12]}"
         with get_connection() as conn:
             conn.execute(

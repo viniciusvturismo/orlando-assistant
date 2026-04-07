@@ -104,6 +104,20 @@ import os as _os
 _admin_path = _os.path.join(_os.path.dirname(__file__), '..', 'static', 'admin.html')
 _parks_seed_path = _os.path.join(_os.path.dirname(__file__), '..', '..', 'data', 'seeds', 'all_parks_attractions.json')
 
+
+
+@app.post("/admin/login")
+async def admin_login(request: Request):
+    import os
+    body = await request.json()
+    email = body.get("email", "")
+    password = body.get("password", "")
+    admin_email = os.environ.get("ADMIN_EMAIL", "admin@vturismo.com.br")
+    admin_pass  = os.environ.get("ADMIN_PASS", "VTurismo@2025")
+    if email == admin_email and password == admin_pass:
+        return {"ok": True}
+    return {"ok": False}
+
 @app.get("/admin")
 def admin_page():
     from fastapi import Response
@@ -123,13 +137,14 @@ def admin_groups():
             rows = conn.execute("""
                 SELECT g.group_id, g.whatsapp_number, g.park_id, g.visit_date,
                        g.profile_id, g.setup_complete, g.created_at,
+                       COALESCE(g.status, 'active') as status,
                        COUNT(m.member_id) as member_count,
                        p.must_do_attractions
                 FROM groups g
                 LEFT JOIN members m ON m.group_id = g.group_id
                 LEFT JOIN group_preferences p ON p.group_id = g.group_id
                 GROUP BY g.group_id
-                ORDER BY g.created_at DESC
+                ORDER BY g.whatsapp_number, g.created_at DESC
             """).fetchall()
             groups = []
             for r in rows:

@@ -69,6 +69,8 @@ tr:hover td{background:rgba(45,122,111,0.03);}
 .badge-open{background:rgba(39,174,96,0.1);color:var(--green);}
 .badge-obras{background:rgba(230,126,34,0.1);color:var(--orange);}
 .badge-closed{background:rgba(192,57,43,0.1);color:var(--red);}
+.badge-archived{background:rgba(107,138,133,0.15);color:var(--muted);}
+.badge-active{background:rgba(39,174,96,0.1);color:var(--green);}
 
 /* ATTRACTIONS EDITOR */
 .park-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
@@ -204,6 +206,7 @@ tr:hover td{background:rgba(45,122,111,0.03);}
                 <th>Data visita</th>
                 <th>Membros</th>
                 <th>Perfil</th>
+                <th>Status</th>
                 <th>Cadastrado em</th>
               </tr>
             </thead>
@@ -218,8 +221,9 @@ tr:hover td{background:rgba(45,122,111,0.03);}
 
 <script>
 // ── Configuração ─────────────────────────────────────────────────
-const ADMIN_EMAIL = 'admin@vturismo.com.br';
-const ADMIN_PASS  = 'VTurismo@2025';
+// Credenciais validadas pelo servidor
+const ADMIN_EMAIL = '';
+const ADMIN_PASS  = '';
 
 const PARK_NAMES = {
   magic_kingdom: 'Magic Kingdom',
@@ -239,16 +243,32 @@ let attrOverrides = {}; // local edits before save
 let currentPark = null;
 
 // ── Login ─────────────────────────────────────────────────────────
-function doLogin() {
+async function doLogin() {
   const email = document.getElementById('loginEmail').value.trim();
   const pass  = document.getElementById('loginPass').value;
-  if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
-    document.getElementById('loginPage').style.display = 'none';
-    document.getElementById('adminPanel').style.display = 'flex';
-    loadAll();
-  } else {
+  const btn = document.querySelector('.btn-login');
+  btn.textContent = 'Entrando...';
+  btn.disabled = true;
+  try {
+    const r = await fetch('/admin/login', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({email, password: pass})
+    });
+    const d = await r.json();
+    if (d.ok) {
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('adminPanel').style.display = 'flex';
+      loadAll();
+    } else {
+      document.getElementById('loginErr').style.display = 'block';
+    }
+  } catch {
+    document.getElementById('loginErr').textContent = 'Erro de conexão. Tente novamente.';
     document.getElementById('loginErr').style.display = 'block';
   }
+  btn.textContent = 'Entrar';
+  btn.disabled = false;
 }
 
 function doLogout() {
@@ -357,15 +377,22 @@ function renderGroups(groups) {
     tbody.innerHTML = '<tr><td colspan="6" class="loading-msg">Nenhum grupo cadastrado ainda.</td></tr>';
     return;
   }
-  tbody.innerHTML = groups.map(g => `
-    <tr>
+  tbody.innerHTML = groups.map(g => {
+    const status = g.status || 'active';
+    const statusBadge = status === 'active'
+      ? '<span class="badge badge-active">✓ Ativo</span>'
+      : '<span class="badge badge-archived">Histórico</span>';
+    const rowStyle = status === 'archived' ? 'opacity:0.6' : '';
+    return `<tr style="${rowStyle}">
       <td><code style="font-size:12px">${g.whatsapp_number || '—'}</code></td>
       <td>${PARK_NAMES[g.park_id] || g.park_id || '—'}</td>
       <td>${g.visit_date ? g.visit_date.split('T')[0] : '—'}</td>
       <td>${g.member_count || 0}</td>
       <td>${g.profile_id ? `<span class="badge badge-open">${g.profile_id}</span>` : '—'}</td>
+      <td>${statusBadge}</td>
       <td style="color:var(--muted);font-size:12px">${g.created_at ? g.created_at.split('T')[0] : '—'}</td>
-    </tr>`).join('');
+    </tr>`;
+  }).join('');
 }
 
 function filterGroups(q) {
