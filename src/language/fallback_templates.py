@@ -35,9 +35,9 @@ def build_error_message() -> str:
     return "Ops, tive um probleminha aqui. Tenta de novo em um instante! 🙏"
 
 
-def build_checkin_prompt() -> str:
+def build_checkin_prompt(park_name: str = "Magic Kingdom") -> str:
     return (
-        "Que emoção! 🎉 Bem-vindos ao Magic Kingdom!\n\n"
+        f"Que emoção! 🎉 Bem-vindos ao {park_name}!\n\n"
         "Pra eu ajudar direitinho — as crianças têm alguma restrição de altura "
         "ou tem alguma atração que vocês não podem deixar de fazer?"
     )

@@ -69,8 +69,35 @@ class MessageRouter:
         Ponto de entrada principal. Nunca propaga exceção.
         """
         # Contexto de sessão para o NLU
+        # Busca o parque do grupo no banco
+        _park_name = "Orlando"
+        if inbound.group_id:
+            try:
+                from ..infra.database.connection import get_connection
+                with get_connection() as _conn:
+                    _row = _conn.execute(
+                        "SELECT park_id FROM groups WHERE group_id = ?",
+                        (inbound.group_id,)
+                    ).fetchone()
+                    if _row and _row["park_id"]:
+                        _park_id = _row["park_id"]
+                        _park_names = {
+                            "magic_kingdom": "Magic Kingdom",
+                            "epcot": "EPCOT",
+                            "hollywood_studios": "Hollywood Studios",
+                            "animal_kingdom": "Animal Kingdom",
+                            "universal_studios": "Universal Studios Florida",
+                            "islands_of_adventure": "Islands of Adventure",
+                            "epic_universe": "Epic Universe",
+                            "seaworld": "SeaWorld Orlando",
+                            "busch_gardens": "Busch Gardens Tampa Bay",
+                        }
+                        _park_name = _park_names.get(_park_id, "Orlando")
+            except Exception:
+                pass
+
         session_ctx = {
-            "park": "Magic Kingdom",
+            "park": _park_name,
             "group_id": inbound.group_id or "novo",
             "channel": inbound.channel.value,
         }
@@ -162,8 +189,34 @@ async def _handle_new_user(inbound: InboundMessage, nlu) -> HandlerResult:
                    for m in nlu.members_mentioned]
         service.update_members(group.group_id, members)
 
+    # Pega o nome do parque para a mensagem de boas-vindas
+    _welcome_park = "Orlando"
+    try:
+        from ..infra.database.connection import get_connection
+        with get_connection() as _conn:
+            _row = _conn.execute(
+                "SELECT park_id FROM groups WHERE group_id = ?",
+                (group.group_id,)
+            ).fetchone()
+            if _row:
+                _pid = _row["park_id"]
+                _pmap = {
+                    "magic_kingdom": "Magic Kingdom",
+                    "epcot": "EPCOT",
+                    "hollywood_studios": "Hollywood Studios",
+                    "animal_kingdom": "Animal Kingdom",
+                    "universal_studios": "Universal Studios Florida",
+                    "islands_of_adventure": "Islands of Adventure",
+                    "epic_universe": "Epic Universe",
+                    "seaworld": "SeaWorld Orlando",
+                    "busch_gardens": "Busch Gardens Tampa Bay",
+                }
+                _welcome_park = _pmap.get(_pid, "Orlando")
+    except Exception:
+        pass
+
     return HandlerResult(
-        text=build_checkin_prompt(),
+        text=build_checkin_prompt(_welcome_park),
         intent_handled="CHECK_IN",
         needs_followup=True,
     )
