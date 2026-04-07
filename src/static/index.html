@@ -123,6 +123,15 @@ body{background:var(--cream);color:var(--text);font-family:'Lato',sans-serif;min
 .sp{width:22px;height:22px;border:2.5px solid var(--border);border-top-color:var(--teal);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 8px;}
 @keyframes spin{to{transform:rotate(360deg)}}
 input[type=date]{color-scheme:light;}
+
+.park-group-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:10px;margin-top:4px;}
+.park-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px;}
+.park-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:16px 12px;text-align:center;cursor:pointer;transition:all 0.2s;box-shadow:0 1px 4px rgba(45,122,111,0.06);}
+.park-card:hover{border-color:var(--teal);transform:translateY(-1px);}
+.park-card.selected{border-color:var(--teal);background:rgba(45,122,111,0.06);box-shadow:0 0 0 2px rgba(45,122,111,0.2);}
+.park-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 10px;}
+.park-name{font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:var(--text);line-height:1.3;}
+
 </style>
 </head>
 <body>
@@ -139,19 +148,75 @@ input[type=date]{color-scheme:light;}
     </div>
     <div class="logo-text">
       <div class="logo-name">Pra Onde Agora</div>
-      <div class="logo-tagline">Guia inteligente · Magic Kingdom</div>
+      <div class="logo-tagline">Guia inteligente · Orlando</div>
     </div>
   </div>
 </div>
 
 <div class="progress">
-  <div class="dot active" id="d1"></div><div class="line"></div>
+  <div class="dot active" id="d0"></div><div class="line"></div>
+  <div class="dot" id="d1"></div><div class="line"></div>
   <div class="dot" id="d2"></div><div class="line"></div>
   <div class="dot" id="d3"></div>
 </div>
 
+
+<!-- TELA 0: Seleção de parque -->
+<div class="screen active" id="s0">
+  <div class="title">Qual parque vocês vão visitar hoje?</div>
+  <div class="sub">Selecione o parque para personalizar as recomendações.</div>
+
+  <div class="park-group-label">Walt Disney World</div>
+  <div class="park-grid">
+    <div class="park-card" data-park="magic_kingdom" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#1A3A6B;">🏰</div>
+      <div class="park-name">Magic Kingdom</div>
+    </div>
+    <div class="park-card" data-park="epcot" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#1A5276;">🌍</div>
+      <div class="park-name">EPCOT</div>
+    </div>
+    <div class="park-card" data-park="hollywood_studios" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#7B241C;">🎬</div>
+      <div class="park-name">Hollywood Studios</div>
+    </div>
+    <div class="park-card" data-park="animal_kingdom" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#1E6B4A;">🦁</div>
+      <div class="park-name">Animal Kingdom</div>
+    </div>
+  </div>
+
+  <div class="park-group-label" style="margin-top:20px;">Universal Orlando Resort</div>
+  <div class="park-grid">
+    <div class="park-card" data-park="universal_studios" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#1B2631;">🎥</div>
+      <div class="park-name">Universal Studios</div>
+    </div>
+    <div class="park-card" data-park="islands_of_adventure" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#154360;">⚡</div>
+      <div class="park-name">Islands of Adventure</div>
+    </div>
+    <div class="park-card" data-park="epic_universe" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#4A235A;">🌌</div>
+      <div class="park-name">Epic Universe</div>
+    </div>
+  </div>
+
+  <div class="park-group-label" style="margin-top:20px;">Outros parques</div>
+  <div class="park-grid">
+    <div class="park-card" data-park="seaworld" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#1A5276;">🐬</div>
+      <div class="park-name">SeaWorld Orlando</div>
+    </div>
+    <div class="park-card" data-park="busch_gardens" onclick="selectPark(this)">
+      <div class="park-icon" style="background:#1E6B4A;">🦒</div>
+      <div class="park-name">Busch Gardens Tampa</div>
+    </div>
+  </div>
+</div>
+
 <!-- TELA 1 -->
-<div class="screen active" id="s1">
+<div class="screen" id="s1">
   <div class="title">Quem vai ao parque?</div>
   <div class="sub">Informe os membros do grupo e a data da visita.</div>
   <div class="card"><div class="label">Seu WhatsApp</div>
@@ -291,10 +356,12 @@ function renderA(){
   });
 }
 function showS(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
-function updD(n){[1,2,3].forEach(i=>{const d=document.getElementById('d'+i);d.className='dot';if(i<n)d.classList.add('done');else if(i===n)d.classList.add('active');});}
+function updD(n){[0,1,2,3].forEach(i=>{const d=document.getElementById('d'+i);if(!d)return;d.className='dot';if(i<n)d.classList.add('done');else if(i===n)d.classList.add('active');});}
 function go1(){showS('s1');updD(1);}
+function go0(){showS('s0');updD(0);document.querySelectorAll('.park-card').forEach(c=>c.classList.remove('selected'));selectedPark=null;}
 function go2(){
   const phone=document.getElementById('phone').value.trim();
+  if(!selectedPark)return err('e1','Selecione um parque primeiro');
   const date=document.getElementById('vdate').value;
   const adults=members.filter(m=>m.role==='adult'||m.role==='senior');
   if(!phone)return err('e1','Informe seu número de WhatsApp');
@@ -308,7 +375,7 @@ async function go3(){
   setLd(true);clrErr('e2');
   try{
     const phone=document.getElementById('phone').value.trim().replace(/[\s\-\(\)]/g,'');
-    const gr=await api('POST','/groups',{whatsapp_number:phone,park_id:'magic_kingdom'});
+    const gr=await api('POST','/groups',{whatsapp_number:phone,park_id:selectedPark||'magic_kingdom'});
     const gid=gr.group_id;
     const mems=members.map(m=>({role:m.role,age:m.age?parseInt(m.age):undefined})).filter(m=>m.role==='infant'||m.age);
     await api('PATCH',`/groups/${gid}/members`,{members:mems});
@@ -323,7 +390,17 @@ async function go3(){
 function err(id,msg){const el=document.getElementById(id);el.textContent=msg;el.style.display='block';}
 function clrErr(id){document.getElementById(id).style.display='none';}
 function setLd(show){document.querySelector('#s2 .btn').disabled=show;document.getElementById('ld2').style.display=show?'block':'none';}
-function reset(){members=[];mustDo=new Set();rhythm='low';addM('adult',35);addM('child',8);document.getElementById('phone').value='';renderA();document.querySelectorAll('.ci').forEach(e=>e.classList.remove('on'));document.querySelectorAll('.ropt').forEach((e,i)=>e.classList.toggle('sel',i===0));go1();}
+function reset(){members=[];mustDo=new Set();rhythm='low';addM('adult',35);addM('child',8);document.getElementById('phone').value='';renderA();document.querySelectorAll('.ci').forEach(e=>e.classList.remove('on'));document.querySelectorAll('.ropt').forEach((e,i)=>e.classList.toggle('sel',i===0));go0();}
+
+let selectedPark = null;
+
+function selectPark(el) {
+  document.querySelectorAll('.park-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPark = el.dataset.park;
+  setTimeout(() => { go1(); }, 300);
+}
+
 async function api(m,p,b){
   const r=await fetch(p,{method:m,headers:{'Content-Type':'application/json'},body:b?JSON.stringify(b):undefined});
   if(!r.ok){const e=await r.json().catch(()=>({}));throw new Error(e.detail||'HTTP '+r.status);}
