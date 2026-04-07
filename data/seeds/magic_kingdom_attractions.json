@@ -5,10 +5,17 @@
     "version": "1.0.0",
     "last_updated": "2025-07-15",
     "total_attractions": 18,
-    "areas": ["main_street","adventureland","frontierland","liberty_square","fantasyland","tomorrowland","storybook_circus"]
+    "areas": [
+      "main_street",
+      "adventureland",
+      "frontierland",
+      "liberty_square",
+      "fantasyland",
+      "tomorrowland",
+      "storybook_circus"
+    ]
   },
   "mk_attractions": {
-
     "seven_dwarfs_mine_train": {
       "name": "Seven Dwarfs Mine Train",
       "name_pt": "Montanha dos Sete Anões",
@@ -24,19 +31,48 @@
       "suitable_for_infants": false,
       "rider_swap": true,
       "base_priority_score": 0.97,
-      "tags": ["thrill","dark","iconic","classic","family"],
-      "ideal_profiles": ["P2","P3","P4"],
-      "best_time_of_day": ["rope_drop","evening"],
-      "avoid_time_of_day": ["midday","afternoon"],
-      "avg_wait_by_period": {"rope_drop":20,"morning":60,"midday":85,"afternoon":70,"evening":40,"night":25},
+      "tags": [
+        "thrill",
+        "dark",
+        "iconic",
+        "classic",
+        "family"
+      ],
+      "ideal_profiles": [
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "best_time_of_day": [
+        "rope_drop",
+        "evening"
+      ],
+      "avoid_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 20,
+        "morning": 60,
+        "midday": 85,
+        "afternoon": 70,
+        "evening": 40,
+        "night": 25
+      },
       "location_zone": "leste de Fantasyland",
-      "adjacent_areas": ["storybook_circus","liberty_square"],
-      "nearby_attractions": ["peter_pan_flight","dumbo","barnstormer"],
+      "adjacent_areas": [
+        "storybook_circus",
+        "liberty_square"
+      ],
+      "nearby_attractions": [
+        "peter_pan_flight",
+        "dumbo",
+        "barnstormer"
+      ],
       "strategic_notes": "Atração mais concorrida do MK. Janela ideal: abertura ou última hora. Rider swap disponível para crianças abaixo de 97cm.",
       "lightning_lane": "individual",
       "active": true
     },
-
     "space_mountain": {
       "name": "Space Mountain",
       "name_pt": "Space Mountain",
@@ -52,19 +88,46 @@
       "suitable_for_infants": false,
       "rider_swap": true,
       "base_priority_score": 0.93,
-      "tags": ["thrill","dark","iconic","indoor_ac"],
-      "ideal_profiles": ["P3","P4","P7"],
-      "best_time_of_day": ["rope_drop","night"],
-      "avoid_time_of_day": ["midday"],
-      "avg_wait_by_period": {"rope_drop":10,"morning":45,"midday":70,"afternoon":55,"evening":35,"night":25},
+      "tags": [
+        "thrill",
+        "dark",
+        "iconic",
+        "indoor_ac"
+      ],
+      "ideal_profiles": [
+        "P3",
+        "P4",
+        "P7"
+      ],
+      "best_time_of_day": [
+        "rope_drop",
+        "night"
+      ],
+      "avoid_time_of_day": [
+        "midday"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 10,
+        "morning": 45,
+        "midday": 70,
+        "afternoon": 55,
+        "evening": 35,
+        "night": 25
+      },
       "location_zone": "Tomorrowland central",
-      "adjacent_areas": ["fantasyland","main_street"],
-      "nearby_attractions": ["buzz_lightyear","tron_lightcycle_run","tomorrowland_speedway"],
+      "adjacent_areas": [
+        "fantasyland",
+        "main_street"
+      ],
+      "nearby_attractions": [
+        "buzz_lightyear",
+        "tron_lightcycle_run",
+        "tomorrowland_speedway"
+      ],
       "strategic_notes": "Boa para dias de calor por ser 100% indoor com AC. Experiência melhor à noite pela escuridão total.",
       "lightning_lane": "standard",
       "active": true
     },
-
     "tron_lightcycle_run": {
       "name": "Tron Lightcycle/Run",
       "name_pt": "Tron Lightcycle/Run",
@@ -80,19 +143,44 @@
       "suitable_for_infants": false,
       "rider_swap": true,
       "base_priority_score": 0.96,
-      "tags": ["thrill","iconic","extreme","outdoor"],
-      "ideal_profiles": ["P3","P4","P7"],
-      "best_time_of_day": ["rope_drop"],
-      "avoid_time_of_day": ["midday","afternoon"],
-      "avg_wait_by_period": {"rope_drop":30,"morning":85,"midday":110,"afternoon":95,"evening":70,"night":65},
+      "tags": [
+        "thrill",
+        "iconic",
+        "extreme",
+        "outdoor"
+      ],
+      "ideal_profiles": [
+        "P3",
+        "P4",
+        "P7"
+      ],
+      "best_time_of_day": [
+        "rope_drop"
+      ],
+      "avoid_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 30,
+        "morning": 85,
+        "midday": 110,
+        "afternoon": 95,
+        "evening": 70,
+        "night": 65
+      },
       "location_zone": "norte de Tomorrowland",
-      "adjacent_areas": ["tomorrowland"],
-      "nearby_attractions": ["space_mountain","buzz_lightyear"],
+      "adjacent_areas": [
+        "tomorrowland"
+      ],
+      "nearby_attractions": [
+        "space_mountain",
+        "buzz_lightyear"
+      ],
       "strategic_notes": "Fila raramente abaixo de 60 min exceto no rope drop. Primeira atração do dia para P3/P4/P7. Posição de motocicleta exige equilíbrio.",
       "lightning_lane": "individual",
       "active": true
     },
-
     "big_thunder_mountain": {
       "name": "Big Thunder Mountain Railroad",
       "name_pt": "Big Thunder Mountain",
@@ -108,19 +196,46 @@
       "suitable_for_infants": false,
       "rider_swap": true,
       "base_priority_score": 0.88,
-      "tags": ["thrill","outdoor","iconic","scenic"],
-      "ideal_profiles": ["P2","P3","P4","P7"],
-      "best_time_of_day": ["morning","evening"],
-      "avoid_time_of_day": ["midday"],
-      "avg_wait_by_period": {"rope_drop":5,"morning":35,"midday":55,"afternoon":45,"evening":20,"night":15},
+      "tags": [
+        "thrill",
+        "outdoor",
+        "iconic",
+        "scenic"
+      ],
+      "ideal_profiles": [
+        "P2",
+        "P3",
+        "P4",
+        "P7"
+      ],
+      "best_time_of_day": [
+        "morning",
+        "evening"
+      ],
+      "avoid_time_of_day": [
+        "midday"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 5,
+        "morning": 35,
+        "midday": 55,
+        "afternoon": 45,
+        "evening": 20,
+        "night": 15
+      },
       "location_zone": "Frontierland centro",
-      "adjacent_areas": ["adventureland","liberty_square"],
-      "nearby_attractions": ["tiana_bayou_adventure","haunted_mansion"],
-      "strategic_notes": "Geralmente menor fila que Mine Train e Space. Ótima segunda opção quando as outras estão longas. Excelente à noite pela iluminação cênica.",
+      "adjacent_areas": [
+        "adventureland",
+        "liberty_square"
+      ],
+      "nearby_attractions": [
+        "tiana_bayou_adventure",
+        "haunted_mansion"
+      ],
+      "strategic_notes": "FECHADA EM DEFINITIVO. Atração encerrada permanentemente.",
       "lightning_lane": "standard",
-      "active": true
+      "active": false
     },
-
     "haunted_mansion": {
       "name": "Haunted Mansion",
       "name_pt": "Mansão Mal-Assombrada",
@@ -136,19 +251,49 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.91,
-      "tags": ["dark","classic","iconic","indoor_ac","slow","seated"],
-      "ideal_profiles": ["P2","P4","P5","P6"],
-      "best_time_of_day": ["afternoon","evening"],
-      "avoid_time_of_day": ["morning"],
-      "avg_wait_by_period": {"rope_drop":25,"morning":50,"midday":35,"afternoon":25,"evening":15,"night":10},
+      "tags": [
+        "dark",
+        "classic",
+        "iconic",
+        "indoor_ac",
+        "slow",
+        "seated"
+      ],
+      "ideal_profiles": [
+        "P2",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "afternoon",
+        "evening"
+      ],
+      "avoid_time_of_day": [
+        "morning"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 25,
+        "morning": 50,
+        "midday": 35,
+        "afternoon": 25,
+        "evening": 15,
+        "night": 10
+      },
       "location_zone": "Liberty Square, entre Frontierland e Fantasyland",
-      "adjacent_areas": ["frontierland","fantasyland"],
-      "nearby_attractions": ["big_thunder_mountain","peter_pan_flight","liberty_belle_riverboat"],
+      "adjacent_areas": [
+        "frontierland",
+        "fantasyland"
+      ],
+      "nearby_attractions": [
+        "big_thunder_mountain",
+        "peter_pan_flight",
+        "liberty_belle_riverboat"
+      ],
       "strategic_notes": "Caso raro: fila melhor à tarde/noite. Duração de 9 min dá ótimo custo-benefício. Pode assustar crianças menores de 5 anos sensíveis a escuro.",
       "lightning_lane": "standard",
       "active": true
     },
-
     "pirates_of_the_caribbean": {
       "name": "Pirates of the Caribbean",
       "name_pt": "Piratas do Caribe",
@@ -164,19 +309,50 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.89,
-      "tags": ["dark","classic","iconic","indoor_ac","slow","seated"],
-      "ideal_profiles": ["P1","P2","P4","P5","P6"],
-      "best_time_of_day": ["midday","afternoon"],
-      "avoid_time_of_day": ["rope_drop"],
-      "avg_wait_by_period": {"rope_drop":10,"morning":20,"midday":30,"afternoon":25,"evening":15,"night":10},
+      "tags": [
+        "dark",
+        "classic",
+        "iconic",
+        "indoor_ac",
+        "slow",
+        "seated"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "rope_drop"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 10,
+        "morning": 20,
+        "midday": 30,
+        "afternoon": 25,
+        "evening": 15,
+        "night": 10
+      },
       "location_zone": "Adventureland lado oeste",
-      "adjacent_areas": ["main_street","frontierland"],
-      "nearby_attractions": ["jungle_cruise","enchanted_tiki_room","swiss_family_treehouse"],
+      "adjacent_areas": [
+        "main_street",
+        "frontierland"
+      ],
+      "nearby_attractions": [
+        "jungle_cruise",
+        "enchanted_tiki_room",
+        "swiss_family_treehouse"
+      ],
       "strategic_notes": "All-ages por excelência. Ótima opção no pico de calor do meio-dia pelo AC. Próxima do Jungle Cruise para clustering em Adventureland.",
       "lightning_lane": "none",
       "active": true
     },
-
     "peter_pan_flight": {
       "name": "Peter Pan's Flight",
       "name_pt": "Voo do Peter Pan",
@@ -192,19 +368,50 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.85,
-      "tags": ["classic","iconic","dark","indoor_ac","infantil","scenic"],
-      "ideal_profiles": ["P1","P2","P5","P6"],
-      "best_time_of_day": ["rope_drop","evening"],
-      "avoid_time_of_day": ["midday","afternoon"],
-      "avg_wait_by_period": {"rope_drop":10,"morning":35,"midday":75,"afternoon":60,"evening":35,"night":20},
+      "tags": [
+        "classic",
+        "iconic",
+        "dark",
+        "indoor_ac",
+        "infantil",
+        "scenic"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2",
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "rope_drop",
+        "evening"
+      ],
+      "avoid_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 10,
+        "morning": 35,
+        "midday": 75,
+        "afternoon": 60,
+        "evening": 35,
+        "night": 20
+      },
       "location_zone": "centro de Fantasyland",
-      "adjacent_areas": ["liberty_square","storybook_circus"],
-      "nearby_attractions": ["seven_dwarfs_mine_train","its_a_small_world","dumbo"],
+      "adjacent_areas": [
+        "liberty_square",
+        "storybook_circus"
+      ],
+      "nearby_attractions": [
+        "seven_dwarfs_mine_train",
+        "its_a_small_world",
+        "dumbo"
+      ],
       "strategic_notes": "3 min de duração com filas de até 75 min — relação péssima fora do rope drop. Motor deve penalizar se fila > 30 min. Ideal na abertura ou últimos 45 min.",
       "lightning_lane": "standard",
       "active": true
     },
-
     "its_a_small_world": {
       "name": "it's a small world",
       "name_pt": "É um Mundo Pequeno",
@@ -220,19 +427,46 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.71,
-      "tags": ["classic","slow","indoor_ac","infantil","seated"],
-      "ideal_profiles": ["P1","P5","P6"],
-      "best_time_of_day": ["midday","afternoon"],
-      "avoid_time_of_day": ["rope_drop"],
-      "avg_wait_by_period": {"rope_drop":5,"morning":10,"midday":15,"afternoon":15,"evening":5,"night":5},
+      "tags": [
+        "classic",
+        "slow",
+        "indoor_ac",
+        "infantil",
+        "seated"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "rope_drop"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 5,
+        "morning": 10,
+        "midday": 15,
+        "afternoon": 15,
+        "evening": 5,
+        "night": 5
+      },
       "location_zone": "norte de Fantasyland",
-      "adjacent_areas": ["fantasyland"],
-      "nearby_attractions": ["peter_pan_flight","dumbo","carousel_of_progress"],
+      "adjacent_areas": [
+        "fantasyland"
+      ],
+      "nearby_attractions": [
+        "peter_pan_flight",
+        "dumbo",
+        "carousel_of_progress"
+      ],
       "strategic_notes": "Melhor custo-benefício de tempo do MK: 11 min com fila quase sempre abaixo de 20 min. Uso estratégico no pico de calor. Para P3 e P7 deve ser evitada.",
       "lightning_lane": "none",
       "active": true
     },
-
     "buzz_lightyear": {
       "name": "Buzz Lightyear's Space Ranger Spin",
       "name_pt": "Buzz Lightyear",
@@ -248,19 +482,44 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.72,
-      "tags": ["spinning","indoor_ac","infantil","interactive"],
-      "ideal_profiles": ["P1","P2","P6"],
-      "best_time_of_day": ["morning","afternoon","evening"],
+      "tags": [
+        "spinning",
+        "indoor_ac",
+        "infantil",
+        "interactive"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
       "avoid_time_of_day": [],
-      "avg_wait_by_period": {"rope_drop":10,"morning":20,"midday":35,"afternoon":30,"evening":15,"night":10},
+      "avg_wait_by_period": {
+        "rope_drop": 10,
+        "morning": 20,
+        "midday": 35,
+        "afternoon": 30,
+        "evening": 15,
+        "night": 10
+      },
       "location_zone": "Tomorrowland sul",
-      "adjacent_areas": ["tomorrowland"],
-      "nearby_attractions": ["space_mountain","tron_lightcycle_run","tomorrowland_speedway"],
+      "adjacent_areas": [
+        "tomorrowland"
+      ],
+      "nearby_attractions": [
+        "space_mountain",
+        "tron_lightcycle_run",
+        "tomorrowland_speedway"
+      ],
       "strategic_notes": "Tag spinning — verificar motion_sickness antes de recomendar. Crianças 5-9 anos adoram o elemento de pontuação. Boa transição entre Fantasyland e Space Mountain.",
       "lightning_lane": "none",
       "active": true
     },
-
     "dumbo": {
       "name": "Dumbo the Flying Elephant",
       "name_pt": "Dumbo o Elefante Voador",
@@ -276,19 +535,45 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.74,
-      "tags": ["outdoor","infantil","classic","spinning"],
-      "ideal_profiles": ["P1","P6"],
-      "best_time_of_day": ["rope_drop","evening"],
-      "avoid_time_of_day": ["midday","afternoon"],
-      "avg_wait_by_period": {"rope_drop":5,"morning":20,"midday":40,"afternoon":35,"evening":15,"night":10},
+      "tags": [
+        "outdoor",
+        "infantil",
+        "classic",
+        "spinning"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "rope_drop",
+        "evening"
+      ],
+      "avoid_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 5,
+        "morning": 20,
+        "midday": 40,
+        "afternoon": 35,
+        "evening": 15,
+        "night": 10
+      },
       "location_zone": "Storybook Circus",
-      "adjacent_areas": ["fantasyland"],
-      "nearby_attractions": ["seven_dwarfs_mine_train","barnstormer","peter_pan_flight"],
+      "adjacent_areas": [
+        "fantasyland"
+      ],
+      "nearby_attractions": [
+        "seven_dwarfs_mine_train",
+        "barnstormer",
+        "peter_pan_flight"
+      ],
       "strategic_notes": "2 min de duração — penalizar fortemente se fila > 20 min. Exclusivo para rope drop ou noite. Área tem playground coberto para aguardar.",
       "lightning_lane": "none",
       "active": true
     },
-
     "tiana_bayou_adventure": {
       "name": "Tiana's Bayou Adventure",
       "name_pt": "Aventura no Pântano da Tiana",
@@ -303,20 +588,48 @@
       "rain_sensitive": true,
       "suitable_for_infants": false,
       "rider_swap": true,
-      "base_priority_score": 0.90,
-      "tags": ["water","thrill","iconic","outdoor","dark"],
-      "ideal_profiles": ["P2","P3","P4","P7"],
-      "best_time_of_day": ["afternoon"],
-      "avoid_time_of_day": ["evening","night"],
-      "avg_wait_by_period": {"rope_drop":20,"morning":45,"midday":65,"afternoon":60,"evening":30,"night":20},
+      "base_priority_score": 0.9,
+      "tags": [
+        "water",
+        "thrill",
+        "iconic",
+        "outdoor",
+        "dark"
+      ],
+      "ideal_profiles": [
+        "P2",
+        "P3",
+        "P4",
+        "P7"
+      ],
+      "best_time_of_day": [
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "evening",
+        "night"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 20,
+        "morning": 45,
+        "midday": 65,
+        "afternoon": 60,
+        "evening": 30,
+        "night": 20
+      },
       "location_zone": "Frontierland norte",
-      "adjacent_areas": ["adventureland","liberty_square"],
-      "nearby_attractions": ["big_thunder_mountain","jungle_cruise"],
+      "adjacent_areas": [
+        "adventureland",
+        "liberty_square"
+      ],
+      "nearby_attractions": [
+        "big_thunder_mountain",
+        "jungle_cruise"
+      ],
       "strategic_notes": "Tag water — ideal para tarde de calor, evitar à noite ou em dia frio. Substituiu Splash Mountain em 2024. Duração de 11 min dá bom custo-benefício.",
       "lightning_lane": "standard",
       "active": true
     },
-
     "jungle_cruise": {
       "name": "Jungle Cruise",
       "name_pt": "Cruzeiro pela Selva",
@@ -332,19 +645,48 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.78,
-      "tags": ["outdoor","scenic","classic","slow","seated"],
-      "ideal_profiles": ["P1","P2","P4","P5","P6"],
-      "best_time_of_day": ["morning","evening"],
-      "avoid_time_of_day": ["midday"],
-      "avg_wait_by_period": {"rope_drop":10,"morning":25,"midday":45,"afternoon":35,"evening":20,"night":10},
+      "tags": [
+        "outdoor",
+        "scenic",
+        "classic",
+        "slow",
+        "seated"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "morning",
+        "evening"
+      ],
+      "avoid_time_of_day": [
+        "midday"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 10,
+        "morning": 25,
+        "midday": 45,
+        "afternoon": 35,
+        "evening": 20,
+        "night": 10
+      },
       "location_zone": "Adventureland centro",
-      "adjacent_areas": ["main_street","frontierland"],
-      "nearby_attractions": ["pirates_of_the_caribbean","enchanted_tiki_room"],
+      "adjacent_areas": [
+        "main_street",
+        "frontierland"
+      ],
+      "nearby_attractions": [
+        "pirates_of_the_caribbean",
+        "enchanted_tiki_room"
+      ],
       "strategic_notes": "Humor dos skippers agrada adultos. Outdoor mas tolera chuva leve. Próximo do Pirates para clustering. Boa pausa entre atrações mais intensas.",
       "lightning_lane": "standard",
       "active": true
     },
-
     "barnstormer": {
       "name": "The Barnstormer",
       "name_pt": "Barnstormer — O Grande Coelhão",
@@ -360,19 +702,44 @@
       "suitable_for_infants": false,
       "rider_swap": false,
       "base_priority_score": 0.65,
-      "tags": ["thrill","outdoor","infantil","family"],
-      "ideal_profiles": ["P1","P2"],
-      "best_time_of_day": ["rope_drop","morning"],
-      "avoid_time_of_day": ["midday","afternoon"],
-      "avg_wait_by_period": {"rope_drop":5,"morning":15,"midday":30,"afternoon":25,"evening":10,"night":5},
+      "tags": [
+        "thrill",
+        "outdoor",
+        "infantil",
+        "family"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2"
+      ],
+      "best_time_of_day": [
+        "rope_drop",
+        "morning"
+      ],
+      "avoid_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 5,
+        "morning": 15,
+        "midday": 30,
+        "afternoon": 25,
+        "evening": 10,
+        "night": 5
+      },
       "location_zone": "Storybook Circus",
-      "adjacent_areas": ["fantasyland"],
-      "nearby_attractions": ["dumbo","seven_dwarfs_mine_train"],
+      "adjacent_areas": [
+        "fantasyland"
+      ],
+      "nearby_attractions": [
+        "dumbo",
+        "seven_dwarfs_mine_train"
+      ],
       "strategic_notes": "Primeira montanha-russa ideal para crianças de 3-6 anos. Duração de 1 min — só vale com fila abaixo de 15 min. Rider swap disponível.",
       "lightning_lane": "none",
       "active": true
     },
-
     "tomorrowland_speedway": {
       "name": "Tomorrowland Speedway",
       "name_pt": "Autódromo do Tomorrowland",
@@ -388,19 +755,42 @@
       "suitable_for_infants": false,
       "rider_swap": false,
       "base_priority_score": 0.62,
-      "tags": ["outdoor","infantil","slow"],
-      "ideal_profiles": ["P1","P2"],
-      "best_time_of_day": ["morning","afternoon"],
-      "avoid_time_of_day": ["midday"],
-      "avg_wait_by_period": {"rope_drop":10,"morning":20,"midday":35,"afternoon":30,"evening":15,"night":5},
+      "tags": [
+        "outdoor",
+        "infantil",
+        "slow"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2"
+      ],
+      "best_time_of_day": [
+        "morning",
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "midday"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 10,
+        "morning": 20,
+        "midday": 35,
+        "afternoon": 30,
+        "evening": 15,
+        "night": 5
+      },
       "location_zone": "Tomorrowland sul",
-      "adjacent_areas": ["tomorrowland"],
-      "nearby_attractions": ["buzz_lightyear","space_mountain"],
+      "adjacent_areas": [
+        "tomorrowland"
+      ],
+      "nearby_attractions": [
+        "buzz_lightyear",
+        "space_mountain"
+      ],
       "strategic_notes": "Crianças adoram dirigir, mas espera pode ser longa para experiência curta. Bom para preencher lacuna enquanto adultos esperam em outras filas.",
       "lightning_lane": "none",
       "active": true
     },
-
     "under_the_sea": {
       "name": "Under the Sea — Journey of The Little Mermaid",
       "name_pt": "Sob o Mar — A Pequena Sereia",
@@ -415,20 +805,48 @@
       "rain_sensitive": false,
       "suitable_for_infants": true,
       "rider_swap": false,
-      "base_priority_score": 0.70,
-      "tags": ["classic","slow","indoor_ac","infantil","seated","character"],
-      "ideal_profiles": ["P1","P2","P5","P6"],
-      "best_time_of_day": ["midday","afternoon"],
-      "avoid_time_of_day": ["rope_drop"],
-      "avg_wait_by_period": {"rope_drop":5,"morning":15,"midday":25,"afternoon":20,"evening":10,"night":5},
+      "base_priority_score": 0.7,
+      "tags": [
+        "classic",
+        "slow",
+        "indoor_ac",
+        "infantil",
+        "seated",
+        "character"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2",
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "rope_drop"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 5,
+        "morning": 15,
+        "midday": 25,
+        "afternoon": 20,
+        "evening": 10,
+        "night": 5
+      },
       "location_zone": "oeste de Fantasyland",
-      "adjacent_areas": ["fantasyland"],
-      "nearby_attractions": ["its_a_small_world","enchanted_tales_belle"],
+      "adjacent_areas": [
+        "fantasyland"
+      ],
+      "nearby_attractions": [
+        "its_a_small_world",
+        "enchanted_tales_belle"
+      ],
       "strategic_notes": "Ótima opção para o pico de calor — indoor e leve. Meninas de 4-8 anos adoram. Fila razoavelmente curta na maioria dos horários.",
       "lightning_lane": "none",
       "active": true
     },
-
     "enchanted_tales_belle": {
       "name": "Enchanted Tales with Belle",
       "name_pt": "Contos Encantados com Bela",
@@ -443,20 +861,46 @@
       "rain_sensitive": false,
       "suitable_for_infants": true,
       "rider_swap": false,
-      "base_priority_score": 0.80,
-      "tags": ["character","indoor_ac","slow","infantil","scenic"],
-      "ideal_profiles": ["P1","P2","P6"],
-      "best_time_of_day": ["morning","afternoon"],
-      "avoid_time_of_day": ["rope_drop"],
-      "avg_wait_by_period": {"rope_drop":10,"morning":25,"midday":45,"afternoon":55,"evening":30,"night":15},
+      "base_priority_score": 0.8,
+      "tags": [
+        "character",
+        "indoor_ac",
+        "slow",
+        "infantil",
+        "scenic"
+      ],
+      "ideal_profiles": [
+        "P1",
+        "P2",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "morning",
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "rope_drop"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 10,
+        "morning": 25,
+        "midday": 45,
+        "afternoon": 55,
+        "evening": 30,
+        "night": 15
+      },
       "location_zone": "oeste de Fantasyland",
-      "adjacent_areas": ["fantasyland"],
-      "nearby_attractions": ["under_the_sea","its_a_small_world"],
+      "adjacent_areas": [
+        "fantasyland"
+      ],
+      "nearby_attractions": [
+        "under_the_sea",
+        "its_a_small_world"
+      ],
       "strategic_notes": "Duração real de 20 min — ótimo custo-benefício. Para meninas de 4-8 anos pode ser o momento mais especial do dia. Fazer antes do meio-dia.",
       "lightning_lane": "none",
       "active": true
     },
-
     "liberty_belle_riverboat": {
       "name": "Liberty Belle Riverboat",
       "name_pt": "Barco Liberty Belle",
@@ -472,19 +916,46 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.55,
-      "tags": ["scenic","slow","outdoor","seated","classic"],
-      "ideal_profiles": ["P5","P6"],
-      "best_time_of_day": ["morning","afternoon"],
-      "avoid_time_of_day": ["rope_drop","night"],
-      "avg_wait_by_period": {"rope_drop":5,"morning":10,"midday":15,"afternoon":10,"evening":5,"night":0},
+      "tags": [
+        "scenic",
+        "slow",
+        "outdoor",
+        "seated",
+        "classic"
+      ],
+      "ideal_profiles": [
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "morning",
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "rope_drop",
+        "night"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 5,
+        "morning": 10,
+        "midday": 15,
+        "afternoon": 10,
+        "evening": 5,
+        "night": 0
+      },
       "location_zone": "Liberty Square beira do rio",
-      "adjacent_areas": ["frontierland","fantasyland"],
-      "nearby_attractions": ["haunted_mansion","big_thunder_mountain"],
+      "adjacent_areas": [
+        "frontierland",
+        "fantasyland"
+      ],
+      "nearby_attractions": [
+        "haunted_mansion",
+        "big_thunder_mountain"
+      ],
       "strategic_notes": "17 min de passeio praticamente sem fila. Ideal para idosos e grupos de ritmo leve. Boa pausa entre atrações. Fica de pé o passeio todo.",
       "lightning_lane": "none",
       "active": true
     },
-
     "carousel_of_progress": {
       "name": "Walt Disney's Carousel of Progress",
       "name_pt": "Carrossel do Progresso",
@@ -500,14 +971,42 @@
       "suitable_for_infants": true,
       "rider_swap": false,
       "base_priority_score": 0.58,
-      "tags": ["slow","seated","indoor_ac","classic","show"],
-      "ideal_profiles": ["P4","P5","P6"],
-      "best_time_of_day": ["midday","afternoon"],
-      "avoid_time_of_day": ["rope_drop","night"],
-      "avg_wait_by_period": {"rope_drop":5,"morning":5,"midday":10,"afternoon":10,"evening":5,"night":0},
+      "tags": [
+        "slow",
+        "seated",
+        "indoor_ac",
+        "classic",
+        "show"
+      ],
+      "ideal_profiles": [
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "best_time_of_day": [
+        "midday",
+        "afternoon"
+      ],
+      "avoid_time_of_day": [
+        "rope_drop",
+        "night"
+      ],
+      "avg_wait_by_period": {
+        "rope_drop": 5,
+        "morning": 5,
+        "midday": 10,
+        "afternoon": 10,
+        "evening": 5,
+        "night": 0
+      },
       "location_zone": "Tomorrowland norte",
-      "adjacent_areas": ["tomorrowland"],
-      "nearby_attractions": ["space_mountain","buzz_lightyear"],
+      "adjacent_areas": [
+        "tomorrowland"
+      ],
+      "nearby_attractions": [
+        "space_mountain",
+        "buzz_lightyear"
+      ],
       "strategic_notes": "21 min sentado com AC — paraíso no pico de calor. Praticamente sem fila. Mais voltado para adultos e história da Disney. Crianças podem se entediar.",
       "lightning_lane": "none",
       "active": true
