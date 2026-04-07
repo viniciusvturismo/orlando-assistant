@@ -20,9 +20,14 @@ class GroupService:
         park_id: str = "magic_kingdom",
         visit_date: Optional[date] = None,
     ) -> tuple[Group, bool]:
-        """Retorna (grupo, created). created=True se foi criado agora."""
+        """Retorna (grupo, created). created=True se foi criado agora.
+        Se park_id foi informado e é diferente do existente, atualiza."""
         existing = self._repo.get_by_phone(whatsapp_number)
         if existing:
+            # Atualiza park_id se veio diferente (cliente trocou de parque pelo app)
+            if park_id and park_id != "magic_kingdom" and existing.park_id != park_id:
+                self._repo.update_park(existing.group_id, park_id)
+                existing.park_id = park_id
             return existing, False
 
         group = self._repo.create(

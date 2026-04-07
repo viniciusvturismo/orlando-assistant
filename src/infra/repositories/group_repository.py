@@ -79,6 +79,14 @@ class GroupRepository:
                     ),
                 )
 
+    def update_park(self, group_id: str, park_id: str) -> None:
+        """Atualiza o park_id de um grupo existente."""
+        with get_connection() as conn:
+            conn.execute(
+                "UPDATE groups SET park_id = ? WHERE group_id = ?",
+                (park_id, group_id),
+            )
+
     def update_profile(self, group_id: str, profile_id: ProfileType, setup_complete: bool) -> None:
         with get_connection() as conn:
             conn.execute(
