@@ -49,19 +49,18 @@ class SessionManager:
 
     def resolve(self, phone: str) -> Optional[str]:
         """
-        Retorna group_id se há sessão ativa. None se nunca registrado.
-        Também consulta o banco como fallback (usuário voltou após restart).
+        Retorna group_id mais recente. Sempre consulta banco para pegar
+        o grupo mais novo (caso cliente reconfigure pelo app).
         """
-        if phone in self._sessions:
-            session = self._sessions[phone]
-            session.last_active = datetime.now(timezone.utc)
-            return session.group_id
-
-        # Fallback: consulta banco (cold start / restart do servidor)
+        # Sempre busca o mais recente no banco
         group_id = self._lookup_from_db(phone)
         if group_id:
-            self._sessions[phone] = SessionData(group_id=group_id)
-            logger.debug("session_restored phone=%s group=%s", phone, group_id)
+            # Atualiza sessão em memória com o grupo mais recente
+            if phone not in self._sessions or self._sessions[phone].group_id != group_id:
+                self._sessions[phone] = SessionData(group_id=group_id)
+                logger.debug("session_updated phone=%s group=%s", phone, group_id)
+            else:
+                self._sessions[phone].last_active = datetime.now(timezone.utc)
             return group_id
 
         return None
@@ -106,12 +105,15 @@ class SessionManager:
         return len(self._sessions)
 
     def _lookup_from_db(self, phone: str) -> Optional[str]:
-        """Busca group_id no banco como fallback após restart."""
+        """Busca o group_id mais recente no banco para este telefone."""
         try:
-            from ..infra.repositories.group_repository import get_group_repository
-            repo = get_group_repository()
-            group = repo.get_by_phone(phone)
-            return group.group_id if group else None
+            from ..infra.database.connection import get_connection
+            with get_connection() as conn:
+                row = conn.execute(
+                    "SELECT group_id FROM groups WHERE whatsapp_number = ? ORDER BY created_at DESC LIMIT 1",
+                    (phone,)
+                ).fetchone()
+                return row["group_id"] if row else None
         except Exception as e:
             logger.warning("session_db_lookup_failed phone=%s error=%s", phone, e)
             return None
