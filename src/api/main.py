@@ -147,10 +147,43 @@ def admin_groups():
 @app.get("/admin/attractions")
 def admin_attractions():
     import json
+    result = {}
+
+    # Load all_parks_attractions.json (8 parques)
     if _os.path.exists(_parks_seed_path):
         with open(_parks_seed_path, encoding='utf-8') as f:
-            return json.load(f)
-    return {}
+            result = json.load(f)
+
+    # Load magic_kingdom_attractions.json e converte para o mesmo formato
+    mk_path = _os.path.join(_os.path.dirname(__file__), '..', '..', 'data', 'seeds', 'magic_kingdom_attractions.json')
+    if _os.path.exists(mk_path):
+        with open(mk_path, encoding='utf-8') as f:
+            mk_raw = json.load(f)
+        mk_attractions = mk_raw.get('mk_attractions', {})
+        # Converte formato antigo para o novo
+        converted = {}
+        for slug, a in mk_attractions.items():
+            converted[slug] = {
+                'name': a.get('name', slug),
+                'area': a.get('area', ''),
+                'type': a.get('type', ''),
+                'intensity': a.get('intensity', 'moderate'),
+                'min_height_cm': a.get('min_height_cm', 0),
+                'indoor': a.get('indoor', False),
+                'active': a.get('active', True),
+                'status': 'open' if a.get('active', True) else 'closed',
+                'tags': a.get('tags', []),
+                'description_pt': a.get('description_pt', a.get('strategic_notes', '')),
+                'video_url': a.get('video_url', ''),
+            }
+        result['magic_kingdom'] = {
+            'park_name': 'Magic Kingdom',
+            'park_id': 'magic_kingdom',
+            'entity_id': '75ea578a-adc8-4116-a54d-dccb60765ef9',
+            'attractions': converted,
+        }
+
+    return result
 
 
 @app.patch("/admin/attractions/{park_id}/{attr_slug}")
