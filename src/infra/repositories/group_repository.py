@@ -29,8 +29,33 @@ class GroupRepository:
             return self._hydrate_group(conn, dict(row))
 
     def create(self, whatsapp_number: str, park_id: str, visit_date: date, language: str = "pt-BR") -> Group:
-        group_id = f"grp_{uuid.uuid4().hex[:12]}"
+        """Cria ou atualiza grupo pelo número de WhatsApp (upsert)."""
         now = datetime.utcnow().isoformat()
+
+        # Verifica se já existe grupo com esse número
+        existing = self.get_by_phone(whatsapp_number)
+        if existing:
+            # Atualiza parque, data e reseta setup
+            with get_connection() as conn:
+                conn.execute(
+                    """UPDATE groups SET park_id = ?, visit_date = ?, setup_complete = 0,
+                       profile_id = NULL, created_at = ? WHERE group_id = ?""",
+                    (park_id, visit_date.isoformat(), now, existing.group_id),
+                )
+                # Limpa membros e preferências anteriores
+                conn.execute("DELETE FROM members WHERE group_id = ?", (existing.group_id,))
+                conn.execute("DELETE FROM group_preferences WHERE group_id = ?", (existing.group_id,))
+            return Group(
+                group_id=existing.group_id,
+                whatsapp_number=whatsapp_number,
+                park_id=park_id,
+                visit_date=visit_date,
+                language=language,
+                created_at=datetime.fromisoformat(now),
+            )
+
+        # Cria novo grupo
+        group_id = f"grp_{uuid.uuid4().hex[:12]}"
         with get_connection() as conn:
             conn.execute(
                 """INSERT INTO groups (group_id, whatsapp_number, park_id, visit_date, language, created_at)

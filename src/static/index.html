@@ -220,7 +220,9 @@ input[type=date]{color-scheme:light;}
   <div class="title">Quem vai ao parque?</div>
   <div class="sub">Informe os membros do grupo e a data da visita.</div>
   <div class="card"><div class="label">Seu WhatsApp</div>
-    <input class="input" type="tel" id="phone" placeholder="+55 21 99999-0000">
+    <input class="input" type="tel" id="phone" placeholder="+55 21 99999-0000" 
+    oninput="formatPhone(this)" maxlength="17">
+  <div style="font-size:11px;color:var(--muted);margin-top:6px;">Formato: +55 DDD 9XXXX-XXXX</div>
   </div>
   <div class="card"><div class="label">Data da visita</div>
     <input class="input" type="date" id="vdate">
@@ -440,7 +442,7 @@ async function go3(){
   const mq=parseInt(document.getElementById('mq').value);
   setLd(true);clrErr('e2');
   try{
-    const phone=document.getElementById('phone').value.trim().replace(/[\s\-\(\)]/g,'');
+    const phone=normalizePhone(document.getElementById('phone').value.trim());
     const gr=await api('POST','/groups',{whatsapp_number:phone,park_id:selectedPark||'magic_kingdom'});
     const gid=gr.group_id;
     const mems=members.map(m=>({role:m.role,age:m.age?parseInt(m.age):undefined,name:m.name||undefined})).filter(m=>m.age||m.name);
@@ -465,6 +467,12 @@ function selectPark(el) {
   el.classList.add('selected');
   selectedPark = el.dataset.park;
   setTimeout(() => { go1(); }, 300);
+}
+
+function normalizePhone(raw){
+  let digits = raw.replace(/\D/g,'');
+  if(!digits.startsWith('55')) digits = '55' + digits;
+  return '+' + digits;
 }
 
 async function api(m,p,b){
