@@ -300,23 +300,23 @@ input[type=date]{color-scheme:light;}
 
 <script>
 const ATTRS=[
-  {id:'haunted_mansion',n:'Haunted Mansion',a:'Liberty Square',h:0},
-  {id:'seven_dwarfs_mine_train',n:'Seven Dwarfs Mine Train',a:'Fantasyland',h:97},
-  {id:'tron_lightcycle_run',n:'Tron Lightcycle/Run',a:'Tomorrowland',h:107},
-  {id:'space_mountain',n:'Space Mountain',a:'Tomorrowland',h:112},
-  {id:'tiana_bayou_adventure',n:"Tiana's Bayou Adventure",a:'Frontierland',h:102},
-  {id:'pirates_of_the_caribbean',n:'Pirates of the Caribbean',a:'Adventureland',h:0},
-  {id:'peter_pan_flight',n:"Peter Pan's Flight",a:'Fantasyland',h:0},
-  {id:'its_a_small_world',n:"it's a small world",a:'Fantasyland',h:0},
-  {id:'jungle_cruise',n:'Jungle Cruise',a:'Adventureland',h:0},
-  {id:'buzz_lightyear',n:"Buzz Lightyear's Space Ranger Spin",a:'Tomorrowland',h:0},
-  {id:'dumbo',n:'Dumbo the Flying Elephant',a:'Storybook Circus',h:0},
-  {id:'enchanted_tales_belle',n:'Enchanted Tales with Belle',a:'Fantasyland',h:0},
-  {id:'under_the_sea',n:'Under the Sea',a:'Fantasyland',h:0},
-  {id:'barnstormer',n:'The Barnstormer',a:'Storybook Circus',h:89},
-  {id:'liberty_belle_riverboat',n:'Liberty Belle Riverboat',a:'Liberty Square',h:0},
-  {id:'carousel_of_progress',n:'Carousel of Progress',a:'Tomorrowland',h:0},
-  {id:'tomorrowland_speedway',n:'Tomorrowland Speedway',a:'Tomorrowland',h:54},
+  {id:'haunted_mansion',n:'Haunted Mansion',a:'Liberty Square',h:0,desc:'Dark ride clássico cheio de fantasmas e humor negro. Uma das atrações mais icônicas da Disney, com efeitos práticos impressionantes.',video:'https://www.youtube.com/watch?v=example1'},
+  {id:'seven_dwarfs_mine_train',n:'Seven Dwarfs Mine Train',a:'Fantasyland',h:97,desc:'Montanha-russa familiar com carrinhos que balançam lateralmente. Um dos mais concorridos do parque — vale priorizar cedo.',video:'https://www.youtube.com/watch?v=example2'},
+  {id:'tron_lightcycle_run',n:'Tron Lightcycle/Run',a:'Tomorrowland',h:107,desc:'Coaster de lançamento em posição inclinada, simulando uma lightcycle. Curta mas intensa e visualmente impressionante.',video:'https://www.youtube.com/watch?v=example3'},
+  {id:'space_mountain',n:'Space Mountain',a:'Tomorrowland',h:112,desc:'Clássica coaster no escuro com curvas bruscas. A sensação de velocidade parece maior do que realmente é — ótima para quem curte adrenalina no escuro.',video:'https://www.youtube.com/watch?v=example4'},
+  {id:'tiana_bayou_adventure',n:"Tiana's Bayou Adventure",a:'Frontierland',h:102,desc:'Passeio de barco pelo bayou com grande queda final. Baseada em A Princesa e o Sapo, com boa ambientação e música ao vivo.',video:'https://www.youtube.com/watch?v=example5'},
+  {id:'pirates_of_the_caribbean',n:'Pirates of the Caribbean',a:'Adventureland',h:0,desc:'Passeio de barco clássico por cenas de piratas com animatrônicos. Calm, icônico e ótimo para o calor — tem uma pequena descida no início.',video:'https://www.youtube.com/watch?v=example6'},
+  {id:'peter_pan_flight',n:"Peter Pan's Flight",a:'Fantasyland',h:0,desc:'Voce voa em um galeão sobre Londres e Neverland. Simples mas encantador — a fila costuma ser longa para uma atração suave.',video:'https://www.youtube.com/watch?v=example7'},
+  {id:'its_a_small_world',n:"it's a small world",a:'Fantasyland',h:0,desc:'Passeio em barco por cenários de países do mundo com bonecos cantando. Clássico absoluto da Disney, ótimo para crianças pequenas e descanso.',video:'https://www.youtube.com/watch?v=example8'},
+  {id:'jungle_cruise',n:'Jungle Cruise',a:'Adventureland',h:0,desc:'Barco pelo "rio" com animais animatrônicos e piadas do capitão. Mais divertido pelo humor dos guias do que pela emoção.',video:'https://www.youtube.com/watch?v=example9'},
+  {id:'buzz_lightyear',n:"Buzz Lightyear's Space Ranger Spin",a:'Tomorrowland',h:0,desc:'Dark ride interativa onde você atira em alvos com laser e soma pontos. Ótimo para grupos competitivos e crianças.',video:'https://www.youtube.com/watch?v=example10'},
+  {id:'dumbo',n:'Dumbo the Flying Elephant',a:'Storybook Circus',h:0,desc:'Elefantes voadores clássicos. Simples e adorável para as crianças menores — fila curta porque tem área de espera coberta e com brinquedos.',video:'https://www.youtube.com/watch?v=example11'},
+  {id:'enchanted_tales_belle',n:'Enchanted Tales with Belle',a:'Fantasyland',h:0,desc:'Experiência interativa de encontro com a Bela. Crianças participam da história — uma das melhores experiências para pequenos.',video:'https://www.youtube.com/watch?v=example12'},
+  {id:'under_the_sea',n:'Under the Sea',a:'Fantasyland',h:0,desc:'Passeio suave pelo mundo da Pequena Sereia com cenas coloridas e música. Ótimo para crianças e para desacelerar o ritmo.',video:'https://www.youtube.com/watch?v=example13'},
+  {id:'barnstormer',n:'The Barnstormer',a:'Storybook Circus',h:89,desc:'Coaster curta e suave temática de Pateta. Perfeita como primeira montanha-russa para crianças.',video:'https://www.youtube.com/watch?v=example14'},
+  {id:'liberty_belle_riverboat',n:'Liberty Belle Riverboat',a:'Liberty Square',h:0,desc:'Barco a vapor que contorna a ilha central do parque. Ótimo para descansar os pés com boa vista.',video:null},
+  {id:'carousel_of_progress',n:'Carousel of Progress',a:'Tomorrowland',h:0,desc:'Show em teatro giratório sobre a evolução da tecnologia americana. Clássico do Walt Disney — tranquilo, climatizado e sem fila.',video:null},
+  {id:'tomorrowland_speedway',n:'Tomorrowland Speedway',a:'Tomorrowland',h:54,desc:'Karts em trilhos. As crianças dirigem com auxílio — o motorista precisa ter pelo menos 54cm de altura para alcançar o pedal.',video:null},
 ];
 let members=[],rhythm='low',mustDo=new Set();
 window.onload=()=>{
@@ -350,10 +350,66 @@ function renderA(){
   const g=document.getElementById('agrid');g.innerHTML='';
   ATTRS.forEach(a=>{
     const c=document.createElement('div');c.className='ac';
-    c.onclick=()=>{if(mustDo.has(a.id)){mustDo.delete(a.id);c.classList.remove('sel');}else{mustDo.add(a.id);c.classList.add('sel');}};
-    c.innerHTML=`<div class="ack">✓</div><div class="an">${a.n}</div><div class="am">${a.a}</div>${a.h>0?`<div class="hb">mín. ${a.h}cm</div>`:''}`;
+    c.innerHTML=`
+      <div class="ac-header">
+        <div style="display:flex;align-items:flex-start;gap:8px;">
+          <div style="flex:1" onclick="toggleAttr(event,'${a.id}',this.closest('.ac'))">
+            <div class="an">${a.n}</div>
+            <div class="am">${a.a}</div>
+            ${a.h>0?`<div class="hb">mín. ${a.h}cm</div>`:''}
+            <div style="font-size:10px;color:var(--muted);margin-top:3px;opacity:0.7">▾ ver detalhes</div>
+          </div>
+          <div onclick="toggleMustDo(event,'${a.id}')" style="flex-shrink:0;padding:2px;">
+            <div class="ack" id="ack_${a.id}" style="position:static;width:22px;height:22px;font-size:10px;">✓</div>
+          </div>
+        </div>
+      </div>
+      <div class="ac-detail" id="det_${a.id}">
+        <div class="ac-detail-inner">
+          <div class="ac-desc">${a.desc||'Atração disponível no parque.'}</div>
+          ${a.video?`
+          <div>
+            <span class="spoiler-btn" onclick="toggleSpoiler(event,'sp_${a.id}')">▶ Ver spoiler</span>
+            <span class="spoiler-warning">⚠️ revela a experiência</span>
+            <div class="spoiler-content" id="sp_${a.id}">
+              <a class="spoiler-link" href="${a.video}" target="_blank">🎬 Assistir vídeo</a>
+            </div>
+          </div>`:'<div style="font-size:10px;color:var(--muted)">Vídeo em breve</div>'}
+        </div>
+      </div>`;
     g.appendChild(c);
   });
+}
+
+function toggleAttr(e, id, card){
+  e.stopPropagation();
+  const det = document.getElementById('det_'+id);
+  const ack = document.getElementById('ack_'+id);
+  const isOpen = card.classList.contains('open');
+  // Close all others
+  document.querySelectorAll('.ac.open').forEach(c=>{
+    c.classList.remove('open');
+  });
+  if(!isOpen) card.classList.add('open');
+}
+
+function toggleSpoiler(e, id){
+  e.stopPropagation();
+  const sp = document.getElementById(id);
+  sp.classList.toggle('show');
+}
+
+function toggleMustDo(e, id){
+  e.stopPropagation();
+  const ack = document.getElementById('ack_'+id);
+  const card = ack.closest('.ac');
+  if(mustDo.has(id)){
+    mustDo.delete(id);
+    card.classList.remove('sel');
+  } else {
+    mustDo.add(id);
+    card.classList.add('sel');
+  }
 }
 function showS(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);}
 function updD(n){[0,1,2,3].forEach(i=>{const d=document.getElementById('d'+i);if(!d)return;d.className='dot';if(i<n)d.classList.add('done');else if(i===n)d.classList.add('active');});}
