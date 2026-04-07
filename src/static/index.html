@@ -188,12 +188,12 @@ input[type=date]{color-scheme:light;}
   </div>
   <div class="card"><div class="label">O que evitar</div>
     <div class="cgrid">
-      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="water"><div class="cb">✓</div><span class="cl">Molha</span></label>
-      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="dark"><div class="cb">✓</div><span class="cl">Muito escuro</span></label>
-      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="spinning"><div class="cb">✓</div><span class="cl">Enjoativo</span></label>
-      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="extreme"><div class="cb">✓</div><span class="cl">Radical demais</span></label>
-      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="outdoor"><div class="cb">✓</div><span class="cl">Sol / calor</span></label>
-      <label class="ci" onclick="tgC(this)"><input type="checkbox" value="infantil"><div class="cb">✓</div><span class="cl">Infantil demais</span></label>
+      <div class="ci" onclick="tgC(this)" data-val="water"><div class="cb">✓</div><span class="cl">Molha</span></div>
+      <div class="ci" onclick="tgC(this)" data-val="dark"><div class="cb">✓</div><span class="cl">Muito escuro</span></div>
+      <div class="ci" onclick="tgC(this)" data-val="spinning"><div class="cb">✓</div><span class="cl">Enjoativo</span></div>
+      <div class="ci" onclick="tgC(this)" data-val="extreme"><div class="cb">✓</div><span class="cl">Radical demais</span></div>
+      <div class="ci" onclick="tgC(this)" data-val="outdoor"><div class="cb">✓</div><span class="cl">Sol / calor</span></div>
+      <div class="ci" onclick="tgC(this)" data-val="infantil"><div class="cb">✓</div><span class="cl">Infantil demais</span></div>
     </div>
   </div>
   <div class="card"><div class="label">Must-do — o que não pode perder</div>
@@ -303,7 +303,7 @@ function go2(){
   clrErr('e1');showS('s2');updD(2);
 }
 async function go3(){
-  const avoid=[...document.querySelectorAll('.ci.on input')].map(i=>i.value);
+  const avoid=[...document.querySelectorAll('.ci.on')].map(i=>i.dataset.val).filter(Boolean);
   const mq=parseInt(document.getElementById('mq').value);
   setLd(true);clrErr('e2');
   try{
