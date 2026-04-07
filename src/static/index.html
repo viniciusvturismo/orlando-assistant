@@ -315,22 +315,17 @@ async function loadAttrsForPark(parkId) {
     return;
   }
   try {
-    const r = await fetch('/admin/attractions');
+    const r = await fetch('/parks/' + parkId + '/attractions');
     const data = await r.json();
-    // Converte todos os parques
-    for (const [pid, park] of Object.entries(data)) {
-      const attrs = Object.entries(park.attractions || {}).map(([slug, a]) => ({
-        id: slug,
-        n: a.name,
-        a: (a.area || '').replace(/_/g, ' '),
-        h: a.min_height_cm || 0,
-        desc: a.description_pt || '',
-        video: a.video_url || null,
-        active: a.active !== false && a.status !== 'closed',
-      })).filter(a => a.active);
-      PARK_ATTRS[pid] = attrs;
-    }
-    ATTRS = PARK_ATTRS[parkId] || [];
+    PARK_ATTRS[parkId] = (data.attractions || []).map(a => ({
+      id: a.id,
+      n: a.name,
+      a: a.area || '',
+      h: a.min_height_cm || 0,
+      desc: a.description_pt || '',
+      video: a.video_url || null,
+    }));
+    ATTRS = PARK_ATTRS[parkId];
   } catch(e) {
     console.error('Erro ao carregar atrações:', e);
     ATTRS = [];

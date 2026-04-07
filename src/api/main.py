@@ -98,6 +98,51 @@ def live_queues():
     }
 
 
+@app.get("/parks/{park_id}/attractions")
+def public_park_attractions(park_id: str):
+    """Endpoint público — retorna atrações ativas de um parque."""
+    import json
+
+    result = []
+
+    # Magic Kingdom — seed separado
+    mk_path = _os.path.join(_os.path.dirname(__file__), '..', '..', 'data', 'seeds', 'magic_kingdom_attractions.json')
+    if park_id == 'magic_kingdom' and _os.path.exists(mk_path):
+        with open(mk_path, encoding='utf-8') as f:
+            raw = json.load(f)
+        for slug, a in raw.get('mk_attractions', {}).items():
+            if a.get('active', True):
+                result.append({
+                    'id': slug,
+                    'name': a.get('name', slug),
+                    'area': (a.get('area') or '').replace('_', ' '),
+                    'min_height_cm': a.get('min_height_cm', 0),
+                    'description_pt': a.get('description_pt', a.get('strategic_notes', '')),
+                    'video_url': a.get('video_url', ''),
+                })
+        return {'park_id': park_id, 'attractions': result}
+
+    # Outros parques — all_parks_attractions.json
+    if _os.path.exists(_parks_seed_path):
+        with open(_parks_seed_path, encoding='utf-8') as f:
+            data = json.load(f)
+        park = data.get(park_id, {})
+        for slug, a in park.get('attractions', {}).items():
+            status = a.get('status', 'open' if a.get('active', True) else 'closed')
+            if status != 'closed':
+                result.append({
+                    'id': slug,
+                    'name': a.get('name', slug),
+                    'area': (a.get('area') or '').replace('_', ' '),
+                    'min_height_cm': a.get('min_height_cm', 0),
+                    'description_pt': a.get('description_pt', ''),
+                    'video_url': a.get('video_url', ''),
+                })
+
+    return {'park_id': park_id, 'attractions': result}
+
+
+
 # ── Admin endpoints ──────────────────────────────────────────────
 
 import os as _os
