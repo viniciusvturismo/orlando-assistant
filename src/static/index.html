@@ -58,7 +58,7 @@ body{background:var(--cream);color:var(--text);font-family:'Lato',sans-serif;min
 .input::placeholder{color:var(--muted);}
 
 /* Members */
-.mrow{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;margin-bottom:8px;}
+.mrow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end;margin-bottom:12px;}.mrow-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .mrow select{background:var(--surface2);border:1.5px solid var(--border);border-radius:10px;padding:12px 13px;color:var(--text);font-family:'Lato',sans-serif;font-size:15px;outline:none;-webkit-appearance:none;width:100%;cursor:pointer;}
 .mrow select:focus{border-color:var(--teal);}
 .rbtn{width:36px;height:36px;background:none;border:1.5px solid var(--border);border-radius:8px;color:var(--muted);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;flex-shrink:0;}
@@ -225,9 +225,9 @@ input[type=date]{color-scheme:light;}
   <div class="card"><div class="label">Data da visita</div>
     <input class="input" type="date" id="vdate">
   </div>
-  <div class="card"><div class="label">Membros do grupo</div>
+  <div class="card"><div class="label">Quem vai junto?</div>
     <div id="mlist"></div>
-    <button class="add" onclick="addM()">+ Adicionar membro</button>
+    <button class="add" onclick="addM()">+ Adicionar pessoa</button>
   </div>
   <button class="btn" onclick="go2()">Continuar →</button>
   <div class="err" id="e1"></div>
@@ -324,22 +324,28 @@ window.onload=()=>{
   document.getElementById('vdate').value=d.toISOString().split('T')[0];
   addM('adult',35);addM('child',8);renderA();
 };
-function addM(role='adult',age=''){const id=Date.now()+Math.random();members.push({id,role,age});renderM();}
+function addM(role='adult',age='',name=''){const id=Date.now()+Math.random();members.push({id,role,age,name});renderM();}
 function removeM(id){members=members.filter(m=>m.id!==id);renderM();}
 function renderM(){
   const l=document.getElementById('mlist');l.innerHTML='';
-  members.forEach(m=>{
+  members.forEach((m,i)=>{
     const r=document.createElement('div');r.className='mrow';
-    r.innerHTML=`<select onchange="upM(${m.id},'role',this.value)">
-      <option value="adult" ${m.role==='adult'?'selected':''}>Adulto</option>
-      <option value="child" ${m.role==='child'?'selected':''}>Criança</option>
-      <option value="senior" ${m.role==='senior'?'selected':''}>Idoso</option>
-      <option value="infant" ${m.role==='infant'?'selected':''}>Bebê</option>
-    </select>
-    <input class="input" type="number" placeholder="${m.role==='infant'?'—':'Idade'}"
-      value="${m.age||''}" min="0" max="99" onchange="upM(${m.id},'age',this.value)"
-      ${m.role==='infant'?'disabled':''}>
-    <button class="rbtn" onclick="removeM(${m.id})">×</button>`;
+    r.innerHTML=`
+      <div class="mrow-fields">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;">Nome</div>
+          <input class="input" type="text" placeholder="Ex: Maria"
+            value="${m.name||''}" onchange="upM(${m.id},'name',this.value)"
+            style="padding:11px 13px;">
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;">Idade</div>
+          <input class="input" type="number" placeholder="Ex: 35"
+            value="${m.age||''}" min="0" max="99" onchange="upM(${m.id},'age',this.value)"
+            style="padding:11px 13px;">
+        </div>
+      </div>
+      <button class="rbtn" onclick="removeM(${m.id})" style="margin-bottom:1px;">×</button>`;
     l.appendChild(r);
   });
 }
@@ -419,10 +425,10 @@ function go2(){
   const phone=document.getElementById('phone').value.trim();
   if(!selectedPark)return err('e1','Selecione um parque primeiro');
   const date=document.getElementById('vdate').value;
-  const adults=members.filter(m=>m.role==='adult'||m.role==='senior');
+  const adults=members.filter(m=>m.age||m.name);
   if(!phone)return err('e1','Informe seu número de WhatsApp');
   if(!date)return err('e1','Selecione a data da visita');
-  if(!adults.length)return err('e1','Adicione pelo menos um adulto');
+  if(!members.length)return err('e1','Adicione pelo menos um membro ao grupo');
   clrErr('e1');showS('s2');updD(2);
 }
 async function go3(){
@@ -433,7 +439,7 @@ async function go3(){
     const phone=document.getElementById('phone').value.trim().replace(/[\s\-\(\)]/g,'');
     const gr=await api('POST','/groups',{whatsapp_number:phone,park_id:selectedPark||'magic_kingdom'});
     const gid=gr.group_id;
-    const mems=members.map(m=>({role:m.role,age:m.age?parseInt(m.age):undefined})).filter(m=>m.role==='infant'||m.age);
+    const mems=members.map(m=>({role:m.role,age:m.age?parseInt(m.age):undefined,name:m.name||undefined})).filter(m=>m.age||m.name);
     await api('PATCH',`/groups/${gid}/members`,{members:mems});
     await api('PUT',`/groups/${gid}/preferences`,{
       intensity_preference:rhythm,max_queue_minutes:mq,

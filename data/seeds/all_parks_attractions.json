@@ -16,7 +16,8 @@
           "headliner",
           "thrill"
         ],
-        "description_pt": "Coaster moderna com rotação e trilha sonora. Headliner do parque."
+        "description_pt": "Coaster moderna com rotação e trilha sonora. Headliner do parque.",
+        "video_url": ""
       },
       "mission_space": {
         "name": "Mission: SPACE",
@@ -27,10 +28,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "spinning_risk",
-          "thrill"
+          "spinning_risk"
         ],
-        "description_pt": "Simulador espacial intenso. Pode causar enjoo."
+        "description_pt": "Simulador espacial intenso. Pode causar enjoo.",
+        "video_url": ""
       },
       "test_track": {
         "name": "Test Track",
@@ -43,7 +44,8 @@
         "tags": [
           "headliner"
         ],
-        "description_pt": "Experiência automotiva com aceleração externa."
+        "description_pt": "Experiência automotiva com aceleração externa.",
+        "video_url": ""
       },
       "spaceship_earth": {
         "name": "Spaceship Earth",
@@ -57,7 +59,8 @@
           "iconic",
           "rest"
         ],
-        "description_pt": "Clássico da esfera do EPCOT. Ótimo para descanso."
+        "description_pt": "Clássico da esfera do EPCOT. Ótimo para descanso.",
+        "video_url": ""
       },
       "soarin": {
         "name": "Soarin' Around the World",
@@ -71,7 +74,8 @@
           "family",
           "iconic"
         ],
-        "description_pt": "Voo suave por paisagens do mundo. Muito forte para famílias."
+        "description_pt": "Voo suave por paisagens do mundo.",
+        "video_url": ""
       },
       "living_with_the_land": {
         "name": "Living with the Land",
@@ -82,10 +86,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "educational",
-          "rest"
+          "educational"
         ],
-        "description_pt": "Passeio educativo por estufas e sistemas agrícolas."
+        "description_pt": "Passeio educativo por estufas.",
+        "video_url": ""
       },
       "the_seas_nemo": {
         "name": "The Seas with Nemo & Friends",
@@ -96,25 +100,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "family",
-          "aquarium"
+          "family"
         ],
-        "description_pt": "Passeio suave com Nemo que leva ao aquário."
-      },
-      "turtle_talk_crush": {
-        "name": "Turtle Talk with Crush",
-        "area": "world_nature",
-        "type": "show",
-        "intensity": "low",
-        "min_height_cm": 0,
-        "indoor": true,
-        "active": true,
-        "tags": [
-          "family",
-          "interactive",
-          "rest"
-        ],
-        "description_pt": "Conversa em tempo real com Crush. Ótimo para crianças."
+        "description_pt": "Passeio suave com Nemo que leva ao aquário.",
+        "video_url": ""
       },
       "remys_ratatouille": {
         "name": "Remy's Ratatouille Adventure",
@@ -128,7 +117,8 @@
           "family",
           "popular"
         ],
-        "description_pt": "Dark ride trackless onde você encolhe e atravessa a cozinha."
+        "description_pt": "Dark ride trackless onde você encolhe e atravessa a cozinha.",
+        "video_url": ""
       },
       "frozen_ever_after": {
         "name": "Frozen Ever After",
@@ -140,27 +130,13 @@
         "active": true,
         "tags": [
           "family",
-          "popular",
           "headliner"
         ],
-        "description_pt": "Ride musical de Frozen. Prioridade alta para famílias."
-      },
-      "journey_of_water": {
-        "name": "Journey of Water, Inspired by Moana",
-        "area": "world_nature",
-        "type": "walkthrough",
-        "intensity": "low",
-        "min_height_cm": 0,
-        "indoor": false,
-        "active": true,
-        "tags": [
-          "outdoor",
-          "contemplative"
-        ],
-        "description_pt": "Trilha interativa com água. Boa em dias quentes."
+        "description_pt": "Ride musical de Frozen. Prioridade alta para famílias.",
+        "video_url": ""
       },
       "gran_fiesta_tour": {
-        "name": "Gran Fiesta Tour Starring The Three Caballeros",
+        "name": "Gran Fiesta Tour",
         "area": "world_showcase_mexico",
         "type": "boat_ride",
         "intensity": "low",
@@ -168,10 +144,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "rest",
-          "cool_off"
+          "rest"
         ],
-        "description_pt": "Passeio tranquilo no pavilhão do México."
+        "description_pt": "Passeio tranquilo no pavilhão do México.",
+        "video_url": ""
       },
       "figment": {
         "name": "Journey Into Imagination With Figment",
@@ -184,7 +160,8 @@
         "tags": [
           "nostalgic"
         ],
-        "description_pt": "Passeio lúdico com Figment."
+        "description_pt": "Passeio lúdico com Figment.",
+        "video_url": ""
       },
       "pixar_short_festival": {
         "name": "Disney and Pixar Short Film Festival",
@@ -195,10 +172,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "rest",
-          "cool_off"
+          "rest"
         ],
-        "description_pt": "Curtas em 3D. Ótima pausa estratégica."
+        "description_pt": "Curtas em 3D. Ótima pausa estratégica.",
+        "video_url": ""
       },
       "american_adventure": {
         "name": "The American Adventure",
@@ -209,10 +186,39 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "educational",
-          "rest"
+          "educational"
         ],
-        "description_pt": "Show histórico com animatrônicos."
+        "description_pt": "Show histórico com animatrônicos.",
+        "video_url": ""
+      },
+      "turtle_talk_crush": {
+        "name": "Turtle Talk with Crush",
+        "area": "world_nature",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "interactive"
+        ],
+        "description_pt": "Conversa em tempo real com Crush.",
+        "video_url": ""
+      },
+      "journey_of_water": {
+        "name": "Journey of Water, Inspired by Moana",
+        "area": "world_nature",
+        "type": "walkthrough",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "outdoor"
+        ],
+        "description_pt": "Trilha interativa com água. Boa em dias quentes.",
+        "video_url": ""
       }
     }
   },
@@ -231,10 +237,10 @@
         "active": true,
         "tags": [
           "headliner",
-          "must_do",
-          "iconic"
+          "must_do"
         ],
-        "description_pt": "Experiência cinematográfica imersiva. Prioridade máxima do resort."
+        "description_pt": "Experiência cinematográfica imersiva. Prioridade máxima do resort.",
+        "video_url": ""
       },
       "smugglers_run": {
         "name": "Millennium Falcon: Smugglers Run",
@@ -245,10 +251,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "interactive",
-          "star_wars"
+          "interactive"
         ],
-        "description_pt": "Missão na Millennium Falcon. Grande apelo para fãs."
+        "description_pt": "Missão na Millennium Falcon.",
+        "video_url": ""
       },
       "runaway_railway": {
         "name": "Mickey & Minnie's Runaway Railway",
@@ -260,10 +266,10 @@
         "active": true,
         "tags": [
           "family",
-          "trackless",
           "popular"
         ],
-        "description_pt": "Dark ride trackless moderna e visualmente criativa."
+        "description_pt": "Dark ride trackless moderna e criativa.",
+        "video_url": ""
       },
       "tower_of_terror": {
         "name": "The Twilight Zone Tower of Terror",
@@ -275,11 +281,11 @@
         "active": true,
         "tags": [
           "iconic",
-          "headliner",
           "thrill",
           "dark"
         ],
-        "description_pt": "Torre de queda com suspense e quedas imprevisíveis."
+        "description_pt": "Torre de queda com suspense e quedas imprevisíveis.",
+        "video_url": ""
       },
       "rocknroller_coaster": {
         "name": "Rock 'n' Roller Coaster",
@@ -293,7 +299,8 @@
           "thrill",
           "inversions"
         ],
-        "description_pt": "Coaster de lançamento com inversões."
+        "description_pt": "Coaster de lançamento com inversões.",
+        "video_url": ""
       },
       "slinky_dog_dash": {
         "name": "Slinky Dog Dash",
@@ -305,10 +312,10 @@
         "active": true,
         "tags": [
           "family",
-          "popular",
-          "outdoor"
+          "popular"
         ],
-        "description_pt": "Coaster familiar e fluida. Fila pesada mas vale."
+        "description_pt": "Coaster familiar e fluida. Fila pesada mas vale.",
+        "video_url": ""
       },
       "toy_story_mania": {
         "name": "Toy Story Mania!",
@@ -320,10 +327,10 @@
         "active": true,
         "tags": [
           "interactive",
-          "family",
-          "competitive"
+          "family"
         ],
-        "description_pt": "Jogo 4D de pontuação. Ótimo para grupos."
+        "description_pt": "Jogo 4D de pontuação. Ótimo para grupos.",
+        "video_url": ""
       },
       "star_tours": {
         "name": "Star Tours – The Adventures Continue",
@@ -334,10 +341,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "star_wars",
-          "spinning_risk"
+          "star_wars"
         ],
-        "description_pt": "Simulador clássico de Star Wars."
+        "description_pt": "Simulador clássico de Star Wars.",
+        "video_url": ""
       },
       "indiana_jones_stunt": {
         "name": "Indiana Jones Epic Stunt Spectacular!",
@@ -348,13 +355,13 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "show",
-          "rest"
+          "show"
         ],
-        "description_pt": "Show de bastidores e dublês."
+        "description_pt": "Show de bastidores e dublês.",
+        "video_url": ""
       },
       "frozen_sing_along": {
-        "name": "For the First Time in Forever: A Frozen Sing-Along",
+        "name": "Frozen Sing-Along Celebration",
         "area": "echo_lake",
         "type": "show",
         "intensity": "low",
@@ -362,11 +369,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "family",
-          "interactive",
-          "cool_off"
+          "family"
         ],
-        "description_pt": "Espetáculo de Frozen com participação do público."
+        "description_pt": "Espetáculo de Frozen com participação do público.",
+        "video_url": ""
       },
       "fantasmic": {
         "name": "Fantasmic!",
@@ -380,21 +386,8 @@
           "nighttime",
           "iconic"
         ],
-        "description_pt": "Show noturno com água, projeções e fogo."
-      },
-      "slinky_alien": {
-        "name": "Alien Swirling Saucers",
-        "area": "toy_story_land",
-        "type": "spinner",
-        "intensity": "low",
-        "min_height_cm": 97,
-        "indoor": false,
-        "active": true,
-        "tags": [
-          "spinning_risk",
-          "outdoor"
-        ],
-        "description_pt": "Atração giratória com temática Toy Story."
+        "description_pt": "Show noturno com água, projeções e fogo.",
+        "video_url": ""
       },
       "beauty_beast_stage": {
         "name": "Beauty and the Beast – Live on Stage",
@@ -406,10 +399,10 @@
         "active": true,
         "tags": [
           "show",
-          "family",
-          "cool_off"
+          "family"
         ],
-        "description_pt": "Musical clássico em teatro grande."
+        "description_pt": "Musical clássico em teatro grande.",
+        "video_url": ""
       }
     }
   },
@@ -428,10 +421,10 @@
         "active": true,
         "tags": [
           "headliner",
-          "must_do",
-          "iconic"
+          "must_do"
         ],
-        "description_pt": "Voo em banshee com imersão máxima. Um dos maiores headliners de Orlando."
+        "description_pt": "Voo em banshee com imersão máxima. Um dos maiores headliners de Orlando.",
+        "video_url": ""
       },
       "navi_river": {
         "name": "Na'vi River Journey",
@@ -445,7 +438,8 @@
           "contemplative",
           "family"
         ],
-        "description_pt": "Passeio em bioluminescência. Focado em atmosfera."
+        "description_pt": "Passeio em bioluminescência. Focado em atmosfera.",
+        "video_url": ""
       },
       "kilimanjaro_safaris": {
         "name": "Kilimanjaro Safaris",
@@ -458,10 +452,10 @@
         "tags": [
           "must_do",
           "animals",
-          "outdoor",
-          "iconic"
+          "outdoor"
         ],
-        "description_pt": "Safári com animais reais. Melhor de manhã."
+        "description_pt": "Safári com animais reais. Melhor de manhã.",
+        "video_url": ""
       },
       "festival_lion_king": {
         "name": "Festival of the Lion King",
@@ -473,10 +467,10 @@
         "active": true,
         "tags": [
           "must_do",
-          "show",
-          "family"
+          "show"
         ],
-        "description_pt": "Espetáculo musical com acrobacia. Alta qualidade."
+        "description_pt": "Espetáculo musical com acrobacia. Alta qualidade.",
+        "video_url": ""
       },
       "expedition_everest": {
         "name": "Expedition Everest",
@@ -488,10 +482,10 @@
         "active": true,
         "tags": [
           "thrill",
-          "headliner",
-          "outdoor"
+          "headliner"
         ],
-        "description_pt": "Coaster intensa com trecho de ré e grande tematização."
+        "description_pt": "Coaster intensa com trecho de ré e grande tematização.",
+        "video_url": ""
       },
       "kali_river_rapids": {
         "name": "Kali River Rapids",
@@ -505,7 +499,8 @@
           "water",
           "outdoor"
         ],
-        "description_pt": "River rapids. Alta chance de molhar."
+        "description_pt": "River rapids. Alta chance de molhar.",
+        "video_url": ""
       },
       "gorilla_falls": {
         "name": "Gorilla Falls Exploration Trail",
@@ -517,25 +512,10 @@
         "active": true,
         "tags": [
           "animals",
-          "outdoor",
-          "contemplative"
+          "outdoor"
         ],
-        "description_pt": "Trilha com gorilas. DNA do parque."
-      },
-      "maharajah_trek": {
-        "name": "Maharajah Jungle Trek",
-        "area": "asia",
-        "type": "trail",
-        "intensity": "low",
-        "min_height_cm": 0,
-        "indoor": false,
-        "active": true,
-        "tags": [
-          "animals",
-          "outdoor",
-          "contemplative"
-        ],
-        "description_pt": "Walkthrough com tigres e aves."
+        "description_pt": "Trilha com gorilas. DNA do parque.",
+        "video_url": ""
       },
       "dinosaur": {
         "name": "DINOSAUR",
@@ -547,10 +527,10 @@
         "active": true,
         "tags": [
           "dark",
-          "thrill",
-          "scary_kids"
+          "thrill"
         ],
-        "description_pt": "Ride escura e brusca. Pode assustar crianças."
+        "description_pt": "Ride escura e brusca. Pode assustar crianças.",
+        "video_url": ""
       },
       "finding_nemo_show": {
         "name": "Finding Nemo: The Big Blue... and Beyond!",
@@ -562,10 +542,10 @@
         "active": true,
         "tags": [
           "family",
-          "rest",
-          "cool_off"
+          "rest"
         ],
-        "description_pt": "Musical familiar. Bom para pausa."
+        "description_pt": "Musical familiar. Bom para pausa.",
+        "video_url": ""
       },
       "feathered_friends": {
         "name": "Feathered Friends in Flight!",
@@ -577,10 +557,25 @@
         "active": true,
         "tags": [
           "animals",
-          "educational",
           "outdoor"
         ],
-        "description_pt": "Show com aves em voo e enfoque ambiental."
+        "description_pt": "Show com aves em voo.",
+        "video_url": ""
+      },
+      "maharajah_trek": {
+        "name": "Maharajah Jungle Trek",
+        "area": "asia",
+        "type": "trail",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "animals",
+          "outdoor"
+        ],
+        "description_pt": "Walkthrough com tigres e aves.",
+        "video_url": ""
       }
     }
   },
@@ -599,10 +594,10 @@
         "active": true,
         "tags": [
           "headliner",
-          "must_do",
-          "harry_potter"
+          "must_do"
         ],
-        "description_pt": "Coaster/dark ride híbrida dentro de Gringotts. Grande headliner."
+        "description_pt": "Coaster/dark ride híbrida dentro de Gringotts. Grande headliner.",
+        "video_url": ""
       },
       "revenge_of_mummy": {
         "name": "Revenge of the Mummy",
@@ -614,10 +609,10 @@
         "active": true,
         "tags": [
           "thrill",
-          "dark",
-          "iconic"
+          "dark"
         ],
-        "description_pt": "Coaster no escuro com fogo e efeitos."
+        "description_pt": "Coaster no escuro com fogo e efeitos.",
+        "video_url": ""
       },
       "transformers": {
         "name": "TRANSFORMERS: The Ride-3D",
@@ -628,10 +623,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "thrill",
-          "action"
+          "thrill"
         ],
-        "description_pt": "Simulador de combate em base móvel."
+        "description_pt": "Simulador de combate em base móvel.",
+        "video_url": ""
       },
       "despicable_me": {
         "name": "Despicable Me Minion Mayhem",
@@ -642,10 +637,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "family",
-          "popular"
+          "family"
         ],
-        "description_pt": "Simulador familiar dos Minions."
+        "description_pt": "Simulador familiar dos Minions.",
+        "video_url": ""
       },
       "villain_con_blast": {
         "name": "Villain-Con Minion Blast",
@@ -656,10 +651,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "interactive",
-          "competitive"
+          "interactive"
         ],
-        "description_pt": "Shooter em esteira com pontuação."
+        "description_pt": "Shooter em esteira com pontuação.",
+        "video_url": ""
       },
       "men_in_black": {
         "name": "MEN IN BLACK: Alien Attack",
@@ -671,10 +666,10 @@
         "active": true,
         "tags": [
           "interactive",
-          "competitive",
-          "spinning_risk"
+          "competitive"
         ],
-        "description_pt": "Jogo de tiro com pontuação. Ótimo para grupos."
+        "description_pt": "Jogo de tiro com pontuação. Ótimo para grupos.",
+        "video_url": ""
       },
       "simpsons_ride": {
         "name": "The Simpsons Ride",
@@ -685,10 +680,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "spinning_risk",
-          "funny"
+          "spinning_risk"
         ],
-        "description_pt": "Simulador caótico. Chance de enjoo."
+        "description_pt": "Simulador caótico. Chance de enjoo.",
+        "video_url": ""
       },
       "bourne_stuntacular": {
         "name": "The Bourne Stuntacular",
@@ -702,10 +697,11 @@
           "show",
           "must_do"
         ],
-        "description_pt": "Show tecnológico com atores ao vivo. Um dos melhores shows de Orlando."
+        "description_pt": "Show tecnológico com atores ao vivo. Um dos melhores de Orlando.",
+        "video_url": ""
       },
       "hogwarts_express_kings": {
-        "name": "Hogwarts Express – King's Cross Station",
+        "name": "Hogwarts Express – King's Cross",
         "area": "london",
         "type": "transport",
         "intensity": "low",
@@ -713,10 +709,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "harry_potter",
-          "park_to_park"
+          "harry_potter"
         ],
-        "description_pt": "Trem entre parques. Só faz sentido com ingresso park-to-park."
+        "description_pt": "Trem entre parques. Só faz sentido com ingresso park-to-park.",
+        "video_url": ""
       },
       "et_adventure": {
         "name": "E.T. Adventure",
@@ -730,7 +726,8 @@
           "nostalgic",
           "family"
         ],
-        "description_pt": "Clássico nostálgico. Suave e atmosférico."
+        "description_pt": "Clássico nostálgico. Suave e atmosférico.",
+        "video_url": ""
       },
       "fast_furious": {
         "name": "Fast & Furious – Supercharged",
@@ -743,7 +740,8 @@
         "tags": [
           "divisive"
         ],
-        "description_pt": "Atração baseada em telas. Divide opiniões."
+        "description_pt": "Atração baseada em telas. Divide opiniões.",
+        "video_url": ""
       },
       "trolls_coaster": {
         "name": "Trolls Trollercoaster",
@@ -757,20 +755,8 @@
           "family",
           "kids"
         ],
-        "description_pt": "Coaster suave para crianças."
-      },
-      "race_thru_ny": {
-        "name": "Race Through New York Starring Jimmy Fallon",
-        "area": "new_york",
-        "type": "simulator",
-        "intensity": "low",
-        "min_height_cm": 102,
-        "indoor": true,
-        "active": true,
-        "tags": [
-          "funny"
-        ],
-        "description_pt": "Simulador com humor e proposta leve."
+        "description_pt": "Coaster suave para crianças.",
+        "video_url": ""
       }
     }
   },
@@ -789,10 +775,10 @@
         "active": true,
         "tags": [
           "headliner",
-          "must_do",
-          "harry_potter"
+          "must_do"
         ],
-        "description_pt": "Coaster com lançamentos e excelente narrativa. Prioridade máxima."
+        "description_pt": "Coaster com lançamentos e excelente narrativa. Prioridade máxima.",
+        "video_url": ""
       },
       "forbidden_journey": {
         "name": "Harry Potter and the Forbidden Journey",
@@ -803,11 +789,11 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "harry_potter",
-          "spinning_risk",
-          "headliner"
+          "headliner",
+          "spinning_risk"
         ],
-        "description_pt": "Passeio intenso dentro de Hogwarts. Pode causar enjoo."
+        "description_pt": "Passeio intenso dentro de Hogwarts. Pode causar enjoo.",
+        "video_url": ""
       },
       "velocicoaster": {
         "name": "Jurassic World VelociCoaster",
@@ -819,10 +805,10 @@
         "active": true,
         "tags": [
           "thrill",
-          "headliner",
-          "must_do"
+          "headliner"
         ],
-        "description_pt": "Uma das melhores coasters do mundo. Extremamente intensa."
+        "description_pt": "Uma das melhores coasters do mundo. Extremamente intensa.",
+        "video_url": ""
       },
       "incredible_hulk": {
         "name": "The Incredible Hulk Coaster",
@@ -836,7 +822,8 @@
           "thrill",
           "inversions"
         ],
-        "description_pt": "Coaster de lançamento com várias inversões."
+        "description_pt": "Coaster de lançamento com várias inversões.",
+        "video_url": ""
       },
       "spider_man": {
         "name": "The Amazing Adventures of Spider-Man",
@@ -850,7 +837,8 @@
           "family",
           "classic"
         ],
-        "description_pt": "Clássica atração híbrida. Ainda muito eficiente."
+        "description_pt": "Clássica atração híbrida. Ainda muito eficiente.",
+        "video_url": ""
       },
       "jurassic_river": {
         "name": "Jurassic Park River Adventure",
@@ -864,7 +852,8 @@
           "water",
           "outdoor"
         ],
-        "description_pt": "Passeio aquático com grande queda final."
+        "description_pt": "Passeio aquático com grande queda final.",
+        "video_url": ""
       },
       "flight_hippogriff": {
         "name": "Flight of the Hippogriff",
@@ -875,10 +864,10 @@
         "indoor": false,
         "active": true,
         "tags": [
-          "family",
-          "harry_potter"
+          "family"
         ],
-        "description_pt": "Coaster curta e familiar."
+        "description_pt": "Coaster curta e familiar.",
+        "video_url": ""
       },
       "ripsaw_falls": {
         "name": "Dudley Do-Right's Ripsaw Falls",
@@ -892,7 +881,8 @@
           "water",
           "outdoor"
         ],
-        "description_pt": "Flume com grande chance de molhar."
+        "description_pt": "Flume com grande chance de molhar.",
+        "video_url": ""
       },
       "bilge_rat_barges": {
         "name": "Popeye & Bluto's Bilge-Rat Barges",
@@ -906,7 +896,8 @@
           "water",
           "outdoor"
         ],
-        "description_pt": "Uma das atrações mais molhadas de Orlando."
+        "description_pt": "Uma das atrações mais molhadas de Orlando.",
+        "video_url": ""
       },
       "cat_in_the_hat": {
         "name": "The Cat in the Hat",
@@ -920,7 +911,8 @@
           "family",
           "kids"
         ],
-        "description_pt": "Passeio familiar pelo universo Dr. Seuss."
+        "description_pt": "Passeio familiar pelo universo Dr. Seuss.",
+        "video_url": ""
       },
       "skull_island_kong": {
         "name": "Skull Island: Reign of Kong",
@@ -934,7 +926,8 @@
           "thrill",
           "dark"
         ],
-        "description_pt": "Percurso em veículo com cenários e projeções."
+        "description_pt": "Percurso em veículo com cenários e projeções.",
+        "video_url": ""
       },
       "doctor_doom": {
         "name": "Doctor Doom's Fearfall",
@@ -947,10 +940,11 @@
         "tags": [
           "thrill"
         ],
-        "description_pt": "Torre de lançamento com sensação de queda."
+        "description_pt": "Torre de lançamento com sensação de queda.",
+        "video_url": ""
       },
       "hogwarts_express_hogsmeade": {
-        "name": "Hogwarts Express – Hogsmeade Station",
+        "name": "Hogwarts Express – Hogsmeade",
         "area": "hogsmeade",
         "type": "transport",
         "intensity": "low",
@@ -958,10 +952,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "harry_potter",
-          "park_to_park"
+          "harry_potter"
         ],
-        "description_pt": "Trem entre parques."
+        "description_pt": "Trem entre parques.",
+        "video_url": ""
       }
     }
   },
@@ -980,10 +974,10 @@
         "active": true,
         "tags": [
           "headliner",
-          "harry_potter",
           "must_do"
         ],
-        "description_pt": "Headliner com narrativa e tecnologia."
+        "description_pt": "Headliner com narrativa e tecnologia.",
+        "video_url": ""
       },
       "mario_kart": {
         "name": "Mario Kart: Bowser's Challenge",
@@ -995,10 +989,10 @@
         "active": true,
         "tags": [
           "interactive",
-          "ar",
           "must_do"
         ],
-        "description_pt": "Ride gamificada com realidade aumentada."
+        "description_pt": "Ride gamificada com realidade aumentada.",
+        "video_url": ""
       },
       "monsters_unchained": {
         "name": "Monsters Unchained: The Frankenstein Experiment",
@@ -1013,7 +1007,8 @@
           "dark",
           "thrill"
         ],
-        "description_pt": "Grande atração de monstros com clima sombrio."
+        "description_pt": "Grande atração de monstros com clima sombrio.",
+        "video_url": ""
       },
       "stardust_racers": {
         "name": "Stardust Racers",
@@ -1027,7 +1022,8 @@
           "thrill",
           "headliner"
         ],
-        "description_pt": "Coaster dupla com sensação de corrida."
+        "description_pt": "Coaster dupla com sensação de corrida.",
+        "video_url": ""
       },
       "hiccup_wing_gliders": {
         "name": "Hiccup's Wing Gliders",
@@ -1040,7 +1036,8 @@
         "tags": [
           "family"
         ],
-        "description_pt": "Coaster fluida com grande apelo para famílias."
+        "description_pt": "Coaster fluida com grande apelo para famílias.",
+        "video_url": ""
       },
       "mine_cart_madness": {
         "name": "Mine-Cart Madness",
@@ -1054,7 +1051,8 @@
           "family",
           "interactive"
         ],
-        "description_pt": "Coaster de Donkey Kong com truque visual."
+        "description_pt": "Coaster de Donkey Kong com truque visual.",
+        "video_url": ""
       },
       "yoshis_adventure": {
         "name": "Yoshi's Adventure",
@@ -1068,7 +1066,8 @@
           "family",
           "kids"
         ],
-        "description_pt": "Ride leve e panorâmica para crianças."
+        "description_pt": "Ride leve e panorâmica para crianças.",
+        "video_url": ""
       },
       "curse_of_werewolf": {
         "name": "Curse of the Werewolf",
@@ -1082,7 +1081,8 @@
           "family",
           "dark"
         ],
-        "description_pt": "Coaster compacta mais acessível."
+        "description_pt": "Coaster compacta mais acessível.",
+        "video_url": ""
       },
       "dragon_racers": {
         "name": "Dragon Racer's Rally",
@@ -1096,7 +1096,8 @@
           "interactive",
           "outdoor"
         ],
-        "description_pt": "Ride aérea com movimentos conforme interação."
+        "description_pt": "Ride aérea com movimentos conforme interação.",
+        "video_url": ""
       },
       "constellation_carousel": {
         "name": "Constellation Carousel",
@@ -1110,7 +1111,8 @@
           "family",
           "kids"
         ],
-        "description_pt": "Carrossel cenográfico para famílias."
+        "description_pt": "Carrossel cenográfico para famílias.",
+        "video_url": ""
       }
     }
   },
@@ -1131,7 +1133,8 @@
           "headliner",
           "thrill"
         ],
-        "description_pt": "Hypercoaster de alta velocidade. Assinatura do parque."
+        "description_pt": "Hypercoaster de alta velocidade. Assinatura do parque.",
+        "video_url": ""
       },
       "manta": {
         "name": "Manta",
@@ -1145,7 +1148,8 @@
           "thrill",
           "unique"
         ],
-        "description_pt": "Flying coaster fluida e elegante."
+        "description_pt": "Flying coaster fluida e elegante.",
+        "video_url": ""
       },
       "kraken": {
         "name": "Kraken",
@@ -1159,7 +1163,8 @@
           "thrill",
           "inversions"
         ],
-        "description_pt": "Floorless coaster clássica com inversões."
+        "description_pt": "Floorless coaster clássica com inversões.",
+        "video_url": ""
       },
       "pipeline": {
         "name": "Pipeline: The Surf Coaster",
@@ -1173,7 +1178,8 @@
           "thrill",
           "unique"
         ],
-        "description_pt": "Stand-up coaster inspirada em surfe."
+        "description_pt": "Stand-up coaster inspirada em surfe.",
+        "video_url": ""
       },
       "ice_breaker": {
         "name": "Ice Breaker",
@@ -1187,7 +1193,8 @@
           "thrill",
           "launch"
         ],
-        "description_pt": "Launch coaster compacta com inclinação reversa."
+        "description_pt": "Launch coaster compacta com inclinação reversa.",
+        "video_url": ""
       },
       "penguin_trek": {
         "name": "Penguin Trek",
@@ -1198,10 +1205,10 @@
         "indoor": true,
         "active": true,
         "tags": [
-          "family",
-          "launch"
+          "family"
         ],
-        "description_pt": "Coaster familiar moderna ligada ao tema dos pinguins."
+        "description_pt": "Coaster familiar moderna com tema de pinguins.",
+        "video_url": ""
       },
       "journey_to_atlantis": {
         "name": "Journey to Atlantis",
@@ -1215,7 +1222,8 @@
           "water",
           "outdoor"
         ],
-        "description_pt": "Mistura de passeio temático com queda aquática."
+        "description_pt": "Mistura de passeio temático com queda aquática.",
+        "video_url": ""
       },
       "infinity_falls": {
         "name": "Infinity Falls",
@@ -1229,7 +1237,8 @@
           "water",
           "outdoor"
         ],
-        "description_pt": "River rapids com boa chance de molhar."
+        "description_pt": "River rapids com boa chance de molhar.",
+        "video_url": ""
       },
       "orca_encounter": {
         "name": "Orca Encounter",
@@ -1243,7 +1252,8 @@
           "animals",
           "educational"
         ],
-        "description_pt": "Show educativo focado em conservação de orcas."
+        "description_pt": "Show educativo focado em conservação de orcas.",
+        "video_url": ""
       },
       "dolphin_adventures": {
         "name": "Dolphin Adventures",
@@ -1257,7 +1267,8 @@
           "animals",
           "family"
         ],
-        "description_pt": "Show de golfinhos com interação."
+        "description_pt": "Show de golfinhos com interação.",
+        "video_url": ""
       },
       "shark_encounter": {
         "name": "Shark Encounter",
@@ -1269,10 +1280,10 @@
         "active": true,
         "tags": [
           "animals",
-          "educational",
-          "cool_off"
+          "educational"
         ],
-        "description_pt": "Túnel e observação de tubarões."
+        "description_pt": "Túnel e observação de tubarões.",
+        "video_url": ""
       },
       "super_grover": {
         "name": "Super Grover's Box Car Derby",
@@ -1286,7 +1297,8 @@
           "kids",
           "family"
         ],
-        "description_pt": "Coaster leve para crianças pequenas."
+        "description_pt": "Coaster leve para crianças pequenas.",
+        "video_url": ""
       }
     }
   },
@@ -1308,7 +1320,8 @@
           "must_do",
           "thrill"
         ],
-        "description_pt": "Headliner do parque. Extremamente intensa."
+        "description_pt": "Headliner do parque. Extremamente intensa.",
+        "video_url": ""
       },
       "sheikra": {
         "name": "SheiKra",
@@ -1322,7 +1335,8 @@
           "thrill",
           "iconic"
         ],
-        "description_pt": "Dive coaster com queda vertical icônica e splash."
+        "description_pt": "Dive coaster com queda vertical icônica e splash.",
+        "video_url": ""
       },
       "montu": {
         "name": "Montu",
@@ -1336,7 +1350,8 @@
           "thrill",
           "classic"
         ],
-        "description_pt": "Inverted coaster intensa e longa."
+        "description_pt": "Inverted coaster intensa e longa.",
+        "video_url": ""
       },
       "cheetah_hunt": {
         "name": "Cheetah Hunt",
@@ -1347,10 +1362,10 @@
         "indoor": false,
         "active": true,
         "tags": [
-          "thrill",
-          "family_friendly"
+          "thrill"
         ],
-        "description_pt": "Launch coaster fluida e acessível."
+        "description_pt": "Launch coaster fluida e acessível.",
+        "video_url": ""
       },
       "tigris": {
         "name": "Tigris",
@@ -1364,7 +1379,8 @@
           "thrill",
           "launch"
         ],
-        "description_pt": "Launch coaster compacta e agressiva."
+        "description_pt": "Launch coaster compacta e agressiva.",
+        "video_url": ""
       },
       "kumba": {
         "name": "Kumba",
@@ -1376,10 +1392,10 @@
         "active": true,
         "tags": [
           "thrill",
-          "classic",
-          "inversions"
+          "classic"
         ],
-        "description_pt": "Steel coaster clássica com loopings."
+        "description_pt": "Steel coaster clássica com loopings.",
+        "video_url": ""
       },
       "falcons_fury": {
         "name": "Falcon's Fury",
@@ -1392,7 +1408,8 @@
         "tags": [
           "thrill"
         ],
-        "description_pt": "Uma das quedas mais fortes da Flórida."
+        "description_pt": "Uma das quedas mais fortes da Flórida.",
+        "video_url": ""
       },
       "serengeti_flyer": {
         "name": "Serengeti Flyer",
@@ -1405,7 +1422,8 @@
         "tags": [
           "thrill"
         ],
-        "description_pt": "Balanço gigante com sensação intensa."
+        "description_pt": "Balanço gigante com sensação intensa.",
+        "video_url": ""
       },
       "congo_river_rapids": {
         "name": "Congo River Rapids",
@@ -1419,7 +1437,8 @@
           "water",
           "outdoor"
         ],
-        "description_pt": "River rapids boa para o calor."
+        "description_pt": "River rapids boa para o calor.",
+        "video_url": ""
       },
       "cobra_curse": {
         "name": "Cobra's Curse",
@@ -1433,7 +1452,8 @@
           "family",
           "spinning_risk"
         ],
-        "description_pt": "Coaster giratória. Equilíbrio bom entre família e emoção."
+        "description_pt": "Coaster giratória. Equilíbrio entre família e emoção.",
+        "video_url": ""
       },
       "phoenix_rising": {
         "name": "Phoenix Rising",
@@ -1446,7 +1466,8 @@
         "tags": [
           "family"
         ],
-        "description_pt": "Coaster suspensa mais leve voltada a famílias."
+        "description_pt": "Coaster suspensa mais leve voltada a famílias.",
+        "video_url": ""
       },
       "serengeti_safari": {
         "name": "Animal habitats / Serengeti Observation",
@@ -1461,7 +1482,8 @@
           "outdoor",
           "must_do"
         ],
-        "description_pt": "Observação de animais. Parte estrutural do parque."
+        "description_pt": "Observação de animais. Parte estrutural do parque.",
+        "video_url": ""
       }
     }
   }
