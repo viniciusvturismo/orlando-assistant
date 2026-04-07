@@ -1,0 +1,1468 @@
+{
+  "epcot": {
+    "park_name": "EPCOT",
+    "park_id": "epcot",
+    "entity_id": "47f90d2c-e191-4239-a466-5892ef59a88b",
+    "attractions": {
+      "guardians_cosmic_rewind": {
+        "name": "Guardians of the Galaxy: Cosmic Rewind",
+        "area": "world_discovery",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "headliner",
+          "thrill"
+        ],
+        "description_pt": "Coaster moderna com rotação e trilha sonora. Headliner do parque."
+      },
+      "mission_space": {
+        "name": "Mission: SPACE",
+        "area": "world_discovery",
+        "type": "simulator",
+        "intensity": "high",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "spinning_risk",
+          "thrill"
+        ],
+        "description_pt": "Simulador espacial intenso. Pode causar enjoo."
+      },
+      "test_track": {
+        "name": "Test Track",
+        "area": "world_discovery",
+        "type": "ride",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "headliner"
+        ],
+        "description_pt": "Experiência automotiva com aceleração externa."
+      },
+      "spaceship_earth": {
+        "name": "Spaceship Earth",
+        "area": "world_celebration",
+        "type": "omnimover",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "iconic",
+          "rest"
+        ],
+        "description_pt": "Clássico da esfera do EPCOT. Ótimo para descanso."
+      },
+      "soarin": {
+        "name": "Soarin' Around the World",
+        "area": "world_nature",
+        "type": "simulator",
+        "intensity": "low",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "iconic"
+        ],
+        "description_pt": "Voo suave por paisagens do mundo. Muito forte para famílias."
+      },
+      "living_with_the_land": {
+        "name": "Living with the Land",
+        "area": "world_nature",
+        "type": "boat_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "educational",
+          "rest"
+        ],
+        "description_pt": "Passeio educativo por estufas e sistemas agrícolas."
+      },
+      "the_seas_nemo": {
+        "name": "The Seas with Nemo & Friends",
+        "area": "world_nature",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "aquarium"
+        ],
+        "description_pt": "Passeio suave com Nemo que leva ao aquário."
+      },
+      "turtle_talk_crush": {
+        "name": "Turtle Talk with Crush",
+        "area": "world_nature",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "interactive",
+          "rest"
+        ],
+        "description_pt": "Conversa em tempo real com Crush. Ótimo para crianças."
+      },
+      "remys_ratatouille": {
+        "name": "Remy's Ratatouille Adventure",
+        "area": "world_showcase_france",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "popular"
+        ],
+        "description_pt": "Dark ride trackless onde você encolhe e atravessa a cozinha."
+      },
+      "frozen_ever_after": {
+        "name": "Frozen Ever After",
+        "area": "world_showcase_norway",
+        "type": "boat_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "popular",
+          "headliner"
+        ],
+        "description_pt": "Ride musical de Frozen. Prioridade alta para famílias."
+      },
+      "journey_of_water": {
+        "name": "Journey of Water, Inspired by Moana",
+        "area": "world_nature",
+        "type": "walkthrough",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "outdoor",
+          "contemplative"
+        ],
+        "description_pt": "Trilha interativa com água. Boa em dias quentes."
+      },
+      "gran_fiesta_tour": {
+        "name": "Gran Fiesta Tour Starring The Three Caballeros",
+        "area": "world_showcase_mexico",
+        "type": "boat_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "rest",
+          "cool_off"
+        ],
+        "description_pt": "Passeio tranquilo no pavilhão do México."
+      },
+      "figment": {
+        "name": "Journey Into Imagination With Figment",
+        "area": "world_celebration",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "nostalgic"
+        ],
+        "description_pt": "Passeio lúdico com Figment."
+      },
+      "pixar_short_festival": {
+        "name": "Disney and Pixar Short Film Festival",
+        "area": "world_celebration",
+        "type": "film",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "rest",
+          "cool_off"
+        ],
+        "description_pt": "Curtas em 3D. Ótima pausa estratégica."
+      },
+      "american_adventure": {
+        "name": "The American Adventure",
+        "area": "world_showcase_usa",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "educational",
+          "rest"
+        ],
+        "description_pt": "Show histórico com animatrônicos."
+      }
+    }
+  },
+  "hollywood_studios": {
+    "park_name": "Hollywood Studios",
+    "park_id": "hollywood_studios",
+    "entity_id": "288747d1-8b4f-4a64-867e-ea7c9b27bad8",
+    "attractions": {
+      "rise_of_resistance": {
+        "name": "Star Wars: Rise of the Resistance",
+        "area": "galaxys_edge",
+        "type": "hybrid",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "headliner",
+          "must_do",
+          "iconic"
+        ],
+        "description_pt": "Experiência cinematográfica imersiva. Prioridade máxima do resort."
+      },
+      "smugglers_run": {
+        "name": "Millennium Falcon: Smugglers Run",
+        "area": "galaxys_edge",
+        "type": "simulator",
+        "intensity": "moderate",
+        "min_height_cm": 97,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "interactive",
+          "star_wars"
+        ],
+        "description_pt": "Missão na Millennium Falcon. Grande apelo para fãs."
+      },
+      "runaway_railway": {
+        "name": "Mickey & Minnie's Runaway Railway",
+        "area": "hollywood_boulevard",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "trackless",
+          "popular"
+        ],
+        "description_pt": "Dark ride trackless moderna e visualmente criativa."
+      },
+      "tower_of_terror": {
+        "name": "The Twilight Zone Tower of Terror",
+        "area": "sunset_boulevard",
+        "type": "drop_tower",
+        "intensity": "high",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "iconic",
+          "headliner",
+          "thrill",
+          "dark"
+        ],
+        "description_pt": "Torre de queda com suspense e quedas imprevisíveis."
+      },
+      "rocknroller_coaster": {
+        "name": "Rock 'n' Roller Coaster",
+        "area": "sunset_boulevard",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 122,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "thrill",
+          "inversions"
+        ],
+        "description_pt": "Coaster de lançamento com inversões."
+      },
+      "slinky_dog_dash": {
+        "name": "Slinky Dog Dash",
+        "area": "toy_story_land",
+        "type": "coaster",
+        "intensity": "moderate",
+        "min_height_cm": 97,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family",
+          "popular",
+          "outdoor"
+        ],
+        "description_pt": "Coaster familiar e fluida. Fila pesada mas vale."
+      },
+      "toy_story_mania": {
+        "name": "Toy Story Mania!",
+        "area": "toy_story_land",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "interactive",
+          "family",
+          "competitive"
+        ],
+        "description_pt": "Jogo 4D de pontuação. Ótimo para grupos."
+      },
+      "star_tours": {
+        "name": "Star Tours – The Adventures Continue",
+        "area": "echo_lake",
+        "type": "simulator",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "star_wars",
+          "spinning_risk"
+        ],
+        "description_pt": "Simulador clássico de Star Wars."
+      },
+      "indiana_jones_stunt": {
+        "name": "Indiana Jones Epic Stunt Spectacular!",
+        "area": "echo_lake",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "show",
+          "rest"
+        ],
+        "description_pt": "Show de bastidores e dublês."
+      },
+      "frozen_sing_along": {
+        "name": "For the First Time in Forever: A Frozen Sing-Along",
+        "area": "echo_lake",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "interactive",
+          "cool_off"
+        ],
+        "description_pt": "Espetáculo de Frozen com participação do público."
+      },
+      "fantasmic": {
+        "name": "Fantasmic!",
+        "area": "sunset_boulevard",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "nighttime",
+          "iconic"
+        ],
+        "description_pt": "Show noturno com água, projeções e fogo."
+      },
+      "slinky_alien": {
+        "name": "Alien Swirling Saucers",
+        "area": "toy_story_land",
+        "type": "spinner",
+        "intensity": "low",
+        "min_height_cm": 97,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "spinning_risk",
+          "outdoor"
+        ],
+        "description_pt": "Atração giratória com temática Toy Story."
+      },
+      "beauty_beast_stage": {
+        "name": "Beauty and the Beast – Live on Stage",
+        "area": "sunset_boulevard",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "show",
+          "family",
+          "cool_off"
+        ],
+        "description_pt": "Musical clássico em teatro grande."
+      }
+    }
+  },
+  "animal_kingdom": {
+    "park_name": "Animal Kingdom",
+    "park_id": "animal_kingdom",
+    "entity_id": "1c84a229-8862-4648-9c71-378daa695667",
+    "attractions": {
+      "flight_of_passage": {
+        "name": "Avatar Flight of Passage",
+        "area": "pandora",
+        "type": "simulator",
+        "intensity": "high",
+        "min_height_cm": 112,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "headliner",
+          "must_do",
+          "iconic"
+        ],
+        "description_pt": "Voo em banshee com imersão máxima. Um dos maiores headliners de Orlando."
+      },
+      "navi_river": {
+        "name": "Na'vi River Journey",
+        "area": "pandora",
+        "type": "boat_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "contemplative",
+          "family"
+        ],
+        "description_pt": "Passeio em bioluminescência. Focado em atmosfera."
+      },
+      "kilimanjaro_safaris": {
+        "name": "Kilimanjaro Safaris",
+        "area": "africa",
+        "type": "safari",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "must_do",
+          "animals",
+          "outdoor",
+          "iconic"
+        ],
+        "description_pt": "Safári com animais reais. Melhor de manhã."
+      },
+      "festival_lion_king": {
+        "name": "Festival of the Lion King",
+        "area": "africa",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "must_do",
+          "show",
+          "family"
+        ],
+        "description_pt": "Espetáculo musical com acrobacia. Alta qualidade."
+      },
+      "expedition_everest": {
+        "name": "Expedition Everest",
+        "area": "asia",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 112,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "headliner",
+          "outdoor"
+        ],
+        "description_pt": "Coaster intensa com trecho de ré e grande tematização."
+      },
+      "kali_river_rapids": {
+        "name": "Kali River Rapids",
+        "area": "asia",
+        "type": "river_rapids",
+        "intensity": "moderate",
+        "min_height_cm": 97,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "water",
+          "outdoor"
+        ],
+        "description_pt": "River rapids. Alta chance de molhar."
+      },
+      "gorilla_falls": {
+        "name": "Gorilla Falls Exploration Trail",
+        "area": "africa",
+        "type": "trail",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "animals",
+          "outdoor",
+          "contemplative"
+        ],
+        "description_pt": "Trilha com gorilas. DNA do parque."
+      },
+      "maharajah_trek": {
+        "name": "Maharajah Jungle Trek",
+        "area": "asia",
+        "type": "trail",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "animals",
+          "outdoor",
+          "contemplative"
+        ],
+        "description_pt": "Walkthrough com tigres e aves."
+      },
+      "dinosaur": {
+        "name": "DINOSAUR",
+        "area": "dinoland",
+        "type": "dark_ride",
+        "intensity": "high",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "dark",
+          "thrill",
+          "scary_kids"
+        ],
+        "description_pt": "Ride escura e brusca. Pode assustar crianças."
+      },
+      "finding_nemo_show": {
+        "name": "Finding Nemo: The Big Blue... and Beyond!",
+        "area": "dinoland",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "rest",
+          "cool_off"
+        ],
+        "description_pt": "Musical familiar. Bom para pausa."
+      },
+      "feathered_friends": {
+        "name": "Feathered Friends in Flight!",
+        "area": "asia",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "animals",
+          "educational",
+          "outdoor"
+        ],
+        "description_pt": "Show com aves em voo e enfoque ambiental."
+      }
+    }
+  },
+  "universal_studios": {
+    "park_name": "Universal Studios Florida",
+    "park_id": "universal_studios",
+    "entity_id": "eb3f4560-2383-4a36-9152-6b3e5ed6bc57",
+    "attractions": {
+      "escape_from_gringotts": {
+        "name": "Harry Potter and the Escape from Gringotts",
+        "area": "diagon_alley",
+        "type": "hybrid",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "headliner",
+          "must_do",
+          "harry_potter"
+        ],
+        "description_pt": "Coaster/dark ride híbrida dentro de Gringotts. Grande headliner."
+      },
+      "revenge_of_mummy": {
+        "name": "Revenge of the Mummy",
+        "area": "new_york",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "thrill",
+          "dark",
+          "iconic"
+        ],
+        "description_pt": "Coaster no escuro com fogo e efeitos."
+      },
+      "transformers": {
+        "name": "TRANSFORMERS: The Ride-3D",
+        "area": "production_central",
+        "type": "simulator",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "thrill",
+          "action"
+        ],
+        "description_pt": "Simulador de combate em base móvel."
+      },
+      "despicable_me": {
+        "name": "Despicable Me Minion Mayhem",
+        "area": "production_central",
+        "type": "simulator",
+        "intensity": "low",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "popular"
+        ],
+        "description_pt": "Simulador familiar dos Minions."
+      },
+      "villain_con_blast": {
+        "name": "Villain-Con Minion Blast",
+        "area": "minion_land",
+        "type": "shooter",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "interactive",
+          "competitive"
+        ],
+        "description_pt": "Shooter em esteira com pontuação."
+      },
+      "men_in_black": {
+        "name": "MEN IN BLACK: Alien Attack",
+        "area": "world_expo",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "interactive",
+          "competitive",
+          "spinning_risk"
+        ],
+        "description_pt": "Jogo de tiro com pontuação. Ótimo para grupos."
+      },
+      "simpsons_ride": {
+        "name": "The Simpsons Ride",
+        "area": "springfield",
+        "type": "simulator",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "spinning_risk",
+          "funny"
+        ],
+        "description_pt": "Simulador caótico. Chance de enjoo."
+      },
+      "bourne_stuntacular": {
+        "name": "The Bourne Stuntacular",
+        "area": "hollywood",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "show",
+          "must_do"
+        ],
+        "description_pt": "Show tecnológico com atores ao vivo. Um dos melhores shows de Orlando."
+      },
+      "hogwarts_express_kings": {
+        "name": "Hogwarts Express – King's Cross Station",
+        "area": "london",
+        "type": "transport",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "harry_potter",
+          "park_to_park"
+        ],
+        "description_pt": "Trem entre parques. Só faz sentido com ingresso park-to-park."
+      },
+      "et_adventure": {
+        "name": "E.T. Adventure",
+        "area": "kidzone",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "nostalgic",
+          "family"
+        ],
+        "description_pt": "Clássico nostálgico. Suave e atmosférico."
+      },
+      "fast_furious": {
+        "name": "Fast & Furious – Supercharged",
+        "area": "san_francisco",
+        "type": "simulator",
+        "intensity": "low",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "divisive"
+        ],
+        "description_pt": "Atração baseada em telas. Divide opiniões."
+      },
+      "trolls_coaster": {
+        "name": "Trolls Trollercoaster",
+        "area": "dreamworks_land",
+        "type": "coaster",
+        "intensity": "low",
+        "min_height_cm": 97,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family",
+          "kids"
+        ],
+        "description_pt": "Coaster suave para crianças."
+      },
+      "race_thru_ny": {
+        "name": "Race Through New York Starring Jimmy Fallon",
+        "area": "new_york",
+        "type": "simulator",
+        "intensity": "low",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "funny"
+        ],
+        "description_pt": "Simulador com humor e proposta leve."
+      }
+    }
+  },
+  "islands_of_adventure": {
+    "park_name": "Islands of Adventure",
+    "park_id": "islands_of_adventure",
+    "entity_id": "267fbe4a-7c76-4236-a847-4ccf70e9a0e4",
+    "attractions": {
+      "hagrids_motorbike": {
+        "name": "Hagrid's Magical Creatures Motorbike Adventure",
+        "area": "hogsmeade",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "headliner",
+          "must_do",
+          "harry_potter"
+        ],
+        "description_pt": "Coaster com lançamentos e excelente narrativa. Prioridade máxima."
+      },
+      "forbidden_journey": {
+        "name": "Harry Potter and the Forbidden Journey",
+        "area": "hogwarts",
+        "type": "dark_ride",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "harry_potter",
+          "spinning_risk",
+          "headliner"
+        ],
+        "description_pt": "Passeio intenso dentro de Hogwarts. Pode causar enjoo."
+      },
+      "velocicoaster": {
+        "name": "Jurassic World VelociCoaster",
+        "area": "jurassic_park",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "headliner",
+          "must_do"
+        ],
+        "description_pt": "Uma das melhores coasters do mundo. Extremamente intensa."
+      },
+      "incredible_hulk": {
+        "name": "The Incredible Hulk Coaster",
+        "area": "marvel",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "inversions"
+        ],
+        "description_pt": "Coaster de lançamento com várias inversões."
+      },
+      "spider_man": {
+        "name": "The Amazing Adventures of Spider-Man",
+        "area": "marvel",
+        "type": "dark_ride",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "classic"
+        ],
+        "description_pt": "Clássica atração híbrida. Ainda muito eficiente."
+      },
+      "jurassic_river": {
+        "name": "Jurassic Park River Adventure",
+        "area": "jurassic_park",
+        "type": "boat_ride",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "water",
+          "outdoor"
+        ],
+        "description_pt": "Passeio aquático com grande queda final."
+      },
+      "flight_hippogriff": {
+        "name": "Flight of the Hippogriff",
+        "area": "hogsmeade",
+        "type": "coaster",
+        "intensity": "low",
+        "min_height_cm": 97,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family",
+          "harry_potter"
+        ],
+        "description_pt": "Coaster curta e familiar."
+      },
+      "ripsaw_falls": {
+        "name": "Dudley Do-Right's Ripsaw Falls",
+        "area": "toon_lagoon",
+        "type": "flume",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "water",
+          "outdoor"
+        ],
+        "description_pt": "Flume com grande chance de molhar."
+      },
+      "bilge_rat_barges": {
+        "name": "Popeye & Bluto's Bilge-Rat Barges",
+        "area": "toon_lagoon",
+        "type": "river_rapids",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "water",
+          "outdoor"
+        ],
+        "description_pt": "Uma das atrações mais molhadas de Orlando."
+      },
+      "cat_in_the_hat": {
+        "name": "The Cat in the Hat",
+        "area": "seuss_landing",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "kids"
+        ],
+        "description_pt": "Passeio familiar pelo universo Dr. Seuss."
+      },
+      "skull_island_kong": {
+        "name": "Skull Island: Reign of Kong",
+        "area": "skull_island",
+        "type": "hybrid",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "thrill",
+          "dark"
+        ],
+        "description_pt": "Percurso em veículo com cenários e projeções."
+      },
+      "doctor_doom": {
+        "name": "Doctor Doom's Fearfall",
+        "area": "marvel",
+        "type": "drop_tower",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill"
+        ],
+        "description_pt": "Torre de lançamento com sensação de queda."
+      },
+      "hogwarts_express_hogsmeade": {
+        "name": "Hogwarts Express – Hogsmeade Station",
+        "area": "hogsmeade",
+        "type": "transport",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "harry_potter",
+          "park_to_park"
+        ],
+        "description_pt": "Trem entre parques."
+      }
+    }
+  },
+  "epic_universe": {
+    "park_name": "Epic Universe",
+    "park_id": "epic_universe",
+    "entity_id": "9a1d3166-2f63-4d8c-9aa5-a8e2a8d13de2",
+    "attractions": {
+      "battle_at_ministry": {
+        "name": "Harry Potter and the Battle at the Ministry",
+        "area": "ministry_of_magic",
+        "type": "hybrid",
+        "intensity": "moderate",
+        "min_height_cm": 102,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "headliner",
+          "harry_potter",
+          "must_do"
+        ],
+        "description_pt": "Headliner com narrativa e tecnologia."
+      },
+      "mario_kart": {
+        "name": "Mario Kart: Bowser's Challenge",
+        "area": "super_nintendo_world",
+        "type": "dark_ride",
+        "intensity": "low",
+        "min_height_cm": 107,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "interactive",
+          "ar",
+          "must_do"
+        ],
+        "description_pt": "Ride gamificada com realidade aumentada."
+      },
+      "monsters_unchained": {
+        "name": "Monsters Unchained: The Frankenstein Experiment",
+        "area": "dark_universe",
+        "type": "dark_ride",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "headliner",
+          "dark",
+          "thrill"
+        ],
+        "description_pt": "Grande atração de monstros com clima sombrio."
+      },
+      "stardust_racers": {
+        "name": "Stardust Racers",
+        "area": "celestial_park",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "headliner"
+        ],
+        "description_pt": "Coaster dupla com sensação de corrida."
+      },
+      "hiccup_wing_gliders": {
+        "name": "Hiccup's Wing Gliders",
+        "area": "isle_of_berk",
+        "type": "coaster",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family"
+        ],
+        "description_pt": "Coaster fluida com grande apelo para famílias."
+      },
+      "mine_cart_madness": {
+        "name": "Mine-Cart Madness",
+        "area": "super_nintendo_world",
+        "type": "coaster",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "interactive"
+        ],
+        "description_pt": "Coaster de Donkey Kong com truque visual."
+      },
+      "yoshis_adventure": {
+        "name": "Yoshi's Adventure",
+        "area": "super_nintendo_world",
+        "type": "ride",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family",
+          "kids"
+        ],
+        "description_pt": "Ride leve e panorâmica para crianças."
+      },
+      "curse_of_werewolf": {
+        "name": "Curse of the Werewolf",
+        "area": "dark_universe",
+        "type": "coaster",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "dark"
+        ],
+        "description_pt": "Coaster compacta mais acessível."
+      },
+      "dragon_racers": {
+        "name": "Dragon Racer's Rally",
+        "area": "isle_of_berk",
+        "type": "ride",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "interactive",
+          "outdoor"
+        ],
+        "description_pt": "Ride aérea com movimentos conforme interação."
+      },
+      "constellation_carousel": {
+        "name": "Constellation Carousel",
+        "area": "celestial_park",
+        "type": "carousel",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family",
+          "kids"
+        ],
+        "description_pt": "Carrossel cenográfico para famílias."
+      }
+    }
+  },
+  "seaworld": {
+    "park_name": "SeaWorld Orlando",
+    "park_id": "seaworld",
+    "entity_id": "d2e4a6f8-b012-3c45-d678-e901f2a3b4c5",
+    "attractions": {
+      "mako": {
+        "name": "Mako",
+        "area": "seaworld_main",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "headliner",
+          "thrill"
+        ],
+        "description_pt": "Hypercoaster de alta velocidade. Assinatura do parque."
+      },
+      "manta": {
+        "name": "Manta",
+        "area": "seaworld_main",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "unique"
+        ],
+        "description_pt": "Flying coaster fluida e elegante."
+      },
+      "kraken": {
+        "name": "Kraken",
+        "area": "seaworld_main",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "inversions"
+        ],
+        "description_pt": "Floorless coaster clássica com inversões."
+      },
+      "pipeline": {
+        "name": "Pipeline: The Surf Coaster",
+        "area": "seaworld_main",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "unique"
+        ],
+        "description_pt": "Stand-up coaster inspirada em surfe."
+      },
+      "ice_breaker": {
+        "name": "Ice Breaker",
+        "area": "seaworld_main",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "launch"
+        ],
+        "description_pt": "Launch coaster compacta com inclinação reversa."
+      },
+      "penguin_trek": {
+        "name": "Penguin Trek",
+        "area": "seaworld_main",
+        "type": "coaster",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "family",
+          "launch"
+        ],
+        "description_pt": "Coaster familiar moderna ligada ao tema dos pinguins."
+      },
+      "journey_to_atlantis": {
+        "name": "Journey to Atlantis",
+        "area": "seaworld_main",
+        "type": "water_coaster",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "water",
+          "outdoor"
+        ],
+        "description_pt": "Mistura de passeio temático com queda aquática."
+      },
+      "infinity_falls": {
+        "name": "Infinity Falls",
+        "area": "seaworld_main",
+        "type": "river_rapids",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "water",
+          "outdoor"
+        ],
+        "description_pt": "River rapids com boa chance de molhar."
+      },
+      "orca_encounter": {
+        "name": "Orca Encounter",
+        "area": "seaworld_main",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "animals",
+          "educational"
+        ],
+        "description_pt": "Show educativo focado em conservação de orcas."
+      },
+      "dolphin_adventures": {
+        "name": "Dolphin Adventures",
+        "area": "seaworld_main",
+        "type": "show",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "animals",
+          "family"
+        ],
+        "description_pt": "Show de golfinhos com interação."
+      },
+      "shark_encounter": {
+        "name": "Shark Encounter",
+        "area": "seaworld_main",
+        "type": "aquarium",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": true,
+        "active": true,
+        "tags": [
+          "animals",
+          "educational",
+          "cool_off"
+        ],
+        "description_pt": "Túnel e observação de tubarões."
+      },
+      "super_grover": {
+        "name": "Super Grover's Box Car Derby",
+        "area": "sesame_street_land",
+        "type": "coaster",
+        "intensity": "low",
+        "min_height_cm": 97,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "kids",
+          "family"
+        ],
+        "description_pt": "Coaster leve para crianças pequenas."
+      }
+    }
+  },
+  "busch_gardens": {
+    "park_name": "Busch Gardens Tampa Bay",
+    "park_id": "busch_gardens",
+    "entity_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "attractions": {
+      "iron_gwazi": {
+        "name": "Iron Gwazi",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "headliner",
+          "must_do",
+          "thrill"
+        ],
+        "description_pt": "Headliner do parque. Extremamente intensa."
+      },
+      "sheikra": {
+        "name": "SheiKra",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "iconic"
+        ],
+        "description_pt": "Dive coaster com queda vertical icônica e splash."
+      },
+      "montu": {
+        "name": "Montu",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "classic"
+        ],
+        "description_pt": "Inverted coaster intensa e longa."
+      },
+      "cheetah_hunt": {
+        "name": "Cheetah Hunt",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "family_friendly"
+        ],
+        "description_pt": "Launch coaster fluida e acessível."
+      },
+      "tigris": {
+        "name": "Tigris",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "high",
+        "min_height_cm": 122,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "launch"
+        ],
+        "description_pt": "Launch coaster compacta e agressiva."
+      },
+      "kumba": {
+        "name": "Kumba",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill",
+          "classic",
+          "inversions"
+        ],
+        "description_pt": "Steel coaster clássica com loopings."
+      },
+      "falcons_fury": {
+        "name": "Falcon's Fury",
+        "area": "busch_main",
+        "type": "drop_tower",
+        "intensity": "extreme",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill"
+        ],
+        "description_pt": "Uma das quedas mais fortes da Flórida."
+      },
+      "serengeti_flyer": {
+        "name": "Serengeti Flyer",
+        "area": "busch_main",
+        "type": "swing",
+        "intensity": "high",
+        "min_height_cm": 137,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "thrill"
+        ],
+        "description_pt": "Balanço gigante com sensação intensa."
+      },
+      "congo_river_rapids": {
+        "name": "Congo River Rapids",
+        "area": "busch_main",
+        "type": "river_rapids",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "water",
+          "outdoor"
+        ],
+        "description_pt": "River rapids boa para o calor."
+      },
+      "cobra_curse": {
+        "name": "Cobra's Curse",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "moderate",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family",
+          "spinning_risk"
+        ],
+        "description_pt": "Coaster giratória. Equilíbrio bom entre família e emoção."
+      },
+      "phoenix_rising": {
+        "name": "Phoenix Rising",
+        "area": "busch_main",
+        "type": "coaster",
+        "intensity": "low",
+        "min_height_cm": 107,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "family"
+        ],
+        "description_pt": "Coaster suspensa mais leve voltada a famílias."
+      },
+      "serengeti_safari": {
+        "name": "Animal habitats / Serengeti Observation",
+        "area": "serengeti",
+        "type": "safari",
+        "intensity": "low",
+        "min_height_cm": 0,
+        "indoor": false,
+        "active": true,
+        "tags": [
+          "animals",
+          "outdoor",
+          "must_do"
+        ],
+        "description_pt": "Observação de animais. Parte estrutural do parque."
+      }
+    }
+  }
+}
