@@ -50,7 +50,9 @@ class TwilioAdapter:
         Campos: From, Body, ProfileName, MessageSid, NumMedia, MediaUrl0, MediaContentType0
         """
         # Normaliza número: remove prefixo "whatsapp:" que Twilio adiciona
+        # Remove prefixo "whatsapp:", espaços e normaliza para +55XXXXXXXXXXX
         phone = from_field.replace("whatsapp:", "").strip()
+        phone = "+" + phone.replace("+", "").replace(" ", "").replace("-", "")
 
         # Detecta tipo de mídia se houver anexo
         media_type = MediaType.TEXT
