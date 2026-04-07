@@ -1,8 +1,11 @@
 import logging
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+
+
 
 from .routers.groups import router as groups_router
 from .routers.recommendations import context_router, rec_router
@@ -56,13 +59,121 @@ def health():
     return {"status": "ok", "env": settings.env}
 
 
-@app.get("/setup")
+@app.get("/")
+def root():
+    from pathlib import Path
+    
+    static_file = Path(__file__).parent.parent / "static" / "index.html"
+    if static_file.exists():
+        return FileResponse(static_file)
+    return {"message": "Orlando Park Assistant API"}
+# Fixed root route - serve the static HTML file directly
+import os as _os
+_html_path = _os.path.join(_os.path.dirname(__file__), '..', 'static', 'index.html')
+
+@app.get("/setup")  
 def setup_page():
-    import os
+    if _os.path.exists(_html_path):
+        with open(_html_path) as f:
+            content = f.read()
+        from fastapi import Response
+        return Response(content=content, media_type="text/html")
+    return {"error": "setup page not found"}
+
+
+@app.get("/queues/live")
+def live_queues():
+    """Busca filas ao vivo da ThemeParks.wiki (para debug e monitoramento)."""
+    from src.services.queue_fetcher import fetch_live_queues
+    queues = fetch_live_queues()
+    if queues is None:
+        return {"status": "unavailable", "queues": {}}
+    operating = {k: v for k, v in queues.items() if v < 999}
+    closed = [k for k, v in queues.items() if v == 999]
+    return {
+        "status": "ok",
+        "operating": operating,
+        "closed": closed,
+        "total": len(queues),
+    }
+
+
+# ── Admin endpoints ──────────────────────────────────────────────
+
+import os as _os
+_admin_path = _os.path.join(_os.path.dirname(__file__), '..', 'static', 'admin.html')
+_parks_seed_path = _os.path.join(_os.path.dirname(__file__), '..', '..', 'data', 'seeds', 'all_parks_attractions.json')
+
+@app.get("/admin")
+def admin_page():
     from fastapi import Response
-    html_path = os.path.join(os.path.dirname(__file__), '..', 'static', 'index.html')
-    if os.path.exists(html_path):
-        with open(html_path) as f:
+    if _os.path.exists(_admin_path):
+        with open(_admin_path, encoding='utf-8') as f:
             content = f.read()
         return Response(content=content, media_type="text/html")
-    return {"error": "page not found"}
+    return {"error": "admin page not found"}
+
+
+@app.get("/admin/groups")
+def admin_groups():
+    import json
+    from src.infra.database.connection import get_connection
+    try:
+        with get_connection() as conn:
+            rows = conn.execute("""
+                SELECT g.group_id, g.whatsapp_number, g.park_id, g.visit_date,
+                       g.profile_id, g.setup_complete, g.created_at,
+                       COUNT(m.member_id) as member_count,
+                       p.must_do_attractions
+                FROM groups g
+                LEFT JOIN members m ON m.group_id = g.group_id
+                LEFT JOIN group_preferences p ON p.group_id = g.group_id
+                GROUP BY g.group_id
+                ORDER BY g.created_at DESC
+            """).fetchall()
+            groups = []
+            for r in rows:
+                d = dict(r)
+                try:
+                    d['must_do'] = json.loads(d.get('must_do_attractions') or '[]')
+                except:
+                    d['must_do'] = []
+                groups.append(d)
+            return {"groups": groups, "total": len(groups)}
+    except Exception as e:
+        return {"groups": [], "total": 0, "error": str(e)}
+
+
+@app.get("/admin/attractions")
+def admin_attractions():
+    import json
+    if _os.path.exists(_parks_seed_path):
+        with open(_parks_seed_path, encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+
+@app.patch("/admin/attractions/{park_id}/{attr_slug}")
+async def admin_update_attraction(park_id: str, attr_slug: str, request: "Request"):
+    import json
+    from fastapi import Request
+    body = await request.json()
+    if not _os.path.exists(_parks_seed_path):
+        return {"error": "seed not found"}
+    with open(_parks_seed_path, encoding='utf-8') as f:
+        data = json.load(f)
+    park = data.get(park_id, {})
+    attrs = park.get('attractions', {})
+    if attr_slug not in attrs:
+        return {"error": "attraction not found"}
+    if 'description_pt' in body:
+        attrs[attr_slug]['description_pt'] = body['description_pt']
+    if 'video_url' in body:
+        attrs[attr_slug]['video_url'] = body['video_url']
+    if 'status' in body and body['status']:
+        status = body['status']
+        attrs[attr_slug]['status'] = status
+        attrs[attr_slug]['active'] = (status == 'open')
+    with open(_parks_seed_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    return {"ok": True, "updated": attr_slug}

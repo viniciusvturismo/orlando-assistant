@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pra Onde Agora — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2D7A6F;--teal-dark:#1F5A52;--gold:#C9A84C;
+  --cream:#F0EDE4;--cream-dark:#E0DDD4;--white:#FFFFFF;
+  --text:#1A2E2B;--muted:#6B8A85;--surface:#FFFFFF;--surface2:#F5F3EE;
+  --border:rgba(45,122,111,0.15);--radius:12px;
+  --red:#C0392B;--orange:#E67E22;--green:#27AE60;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--cream);color:var(--text);font-family:'Lato',sans-serif;min-height:100vh;}
+
+/* LOGIN */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.login-box{background:var(--surface);border:1.5px solid var(--border);border-radius:16px;padding:40px 32px;width:100%;max-width:400px;box-shadow:0 4px 24px rgba(45,122,111,0.08);}
+.login-logo{text-align:center;margin-bottom:28px;}
+.login-logo .name{font-family:'Nunito',sans-serif;font-size:22px;font-weight:800;color:var(--teal);}
+.login-logo .sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.field-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:6px;display:block;}
+.field-input{width:100%;background:var(--surface2);border:1.5px solid var(--border);border-radius:10px;padding:13px 15px;color:var(--text);font-family:'Lato',sans-serif;font-size:15px;outline:none;transition:border-color 0.2s;margin-bottom:14px;}
+.field-input:focus{border-color:var(--teal);}
+.btn-login{width:100%;background:var(--teal);color:white;border:none;border-radius:var(--radius);padding:15px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;cursor:pointer;margin-top:6px;transition:all 0.2s;}
+.btn-login:hover{background:var(--teal-dark);}
+.login-err{color:var(--red);font-size:13px;text-align:center;margin-top:10px;display:none;}
+
+/* LAYOUT */
+.admin-wrap{display:none;min-height:100vh;}
+.sidebar{width:220px;background:var(--teal-dark);position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;padding:0;}
+.sidebar-logo{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.1);}
+.sidebar-logo .name{font-family:'Nunito',sans-serif;font-size:17px;font-weight:800;color:white;}
+.sidebar-logo .sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:2px;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:13px 20px;color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.2s;font-size:14px;font-weight:600;border-left:3px solid transparent;}
+.nav-item:hover{background:rgba(255,255,255,0.08);color:white;}
+.nav-item.active{background:rgba(255,255,255,0.12);color:white;border-left-color:var(--gold);}
+.nav-item .icon{font-size:18px;width:22px;text-align:center;}
+.nav-logout{margin-top:auto;border-top:1px solid rgba(255,255,255,0.1);}
+.main{margin-left:220px;padding:28px 32px;min-height:100vh;}
+.page{display:none;}.page.active{display:block;}
+.page-title{font-family:'Nunito',sans-serif;font-size:24px;font-weight:800;color:var(--teal);margin-bottom:6px;}
+.page-sub{font-size:14px;color:var(--muted);margin-bottom:24px;}
+
+/* METRICS */
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:28px;}
+.metric-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px;}
+.metric-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.metric-val{font-family:'Nunito',sans-serif;font-size:32px;font-weight:800;color:var(--teal);}
+.metric-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+
+/* TABLE */
+.table-wrap{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.table-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);}
+.table-title{font-family:'Nunito',sans-serif;font-size:15px;font-weight:700;color:var(--text);}
+.table-search{background:var(--surface2);border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;font-family:'Lato',sans-serif;font-size:13px;color:var(--text);outline:none;width:200px;}
+.table-search:focus{border-color:var(--teal);}
+table{width:100%;border-collapse:collapse;}
+th{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:12px 20px;text-align:left;background:var(--surface2);border-bottom:1px solid var(--border);}
+td{padding:13px 20px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(45,122,111,0.03);}
+
+/* STATUS BADGES */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;}
+.badge-open{background:rgba(39,174,96,0.1);color:var(--green);}
+.badge-obras{background:rgba(230,126,34,0.1);color:var(--orange);}
+.badge-closed{background:rgba(192,57,43,0.1);color:var(--red);}
+
+/* ATTRACTIONS EDITOR */
+.park-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.park-tab{padding:8px 14px;border-radius:20px;border:1.5px solid var(--border);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;background:var(--surface);color:var(--muted);}
+.park-tab.active{background:var(--teal);color:white;border-color:var(--teal);}
+.attr-grid{display:grid;gap:10px;}
+.attr-row{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.attr-row-header{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;transition:background 0.2s;}
+.attr-row-header:hover{background:var(--surface2);}
+.attr-name{font-family:'Nunito',sans-serif;font-size:14px;font-weight:700;color:var(--text);flex:1;}
+.attr-area{font-size:11px;color:var(--muted);}
+.attr-edit-panel{display:none;padding:16px;border-top:1px solid var(--border);background:var(--surface2);}
+.attr-row.expanded .attr-edit-panel{display:block;}
+.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.edit-field label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:5px;}
+.edit-field input,.edit-field textarea,.edit-field select{width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-family:'Lato',sans-serif;font-size:13px;outline:none;transition:border-color 0.2s;}
+.edit-field input:focus,.edit-field textarea:focus,.edit-field select:focus{border-color:var(--teal);}
+.edit-field textarea{resize:vertical;min-height:70px;}
+.edit-field.full{grid-column:1/-1;}
+.status-btns{display:flex;gap:8px;margin-bottom:14px;}
+.status-btn{flex:1;padding:9px;border-radius:8px;border:1.5px solid var(--border);background:var(--surface);font-family:'Lato',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all 0.2s;text-align:center;}
+.status-btn.sel-open{background:rgba(39,174,96,0.1);border-color:var(--green);color:var(--green);}
+.status-btn.sel-obras{background:rgba(230,126,34,0.1);border-color:var(--orange);color:var(--orange);}
+.status-btn.sel-closed{background:rgba(192,57,43,0.1);border-color:var(--red);color:var(--red);}
+.btn-save{background:var(--teal);color:white;border:none;border-radius:8px;padding:10px 20px;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.btn-save:hover{background:var(--teal-dark);}
+.btn-save.saved{background:var(--green);}
+.save-msg{font-size:12px;color:var(--green);margin-left:10px;display:none;}
+
+/* TOP CHART */
+.chart-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.chart-label{font-size:13px;min-width:160px;color:var(--text);}
+.chart-bar-wrap{flex:1;background:var(--surface2);border-radius:4px;height:8px;overflow:hidden;}
+.chart-bar{height:8px;background:var(--teal);border-radius:4px;transition:width 0.5s ease;}
+.chart-count{font-size:12px;color:var(--muted);min-width:24px;text-align:right;}
+
+/* LOADING */
+.loading-msg{text-align:center;padding:40px;color:var(--muted);font-size:14px;}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login-wrap" id="loginPage">
+  <div class="login-box">
+    <div class="login-logo">
+      <div style="font-size:32px;margin-bottom:8px;">📍</div>
+      <div class="name">Pra Onde Agora</div>
+      <div class="sub">Painel Administrativo · VTurismo</div>
+    </div>
+    <label class="field-label">Email</label>
+    <input class="field-input" type="email" id="loginEmail" placeholder="admin@vturismo.com.br">
+    <label class="field-label">Senha</label>
+    <input class="field-input" type="password" id="loginPass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn-login" onclick="doLogin()">Entrar</button>
+    <div class="login-err" id="loginErr">Email ou senha incorretos.</div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-wrap" id="adminPanel">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <div class="name">Pra Onde Agora</div>
+      <div class="sub">Admin · VTurismo</div>
+    </div>
+    <div class="nav-item active" onclick="showPage('metrics',this)">
+      <span class="icon">📊</span> Métricas
+    </div>
+    <div class="nav-item" onclick="showPage('attractions',this)">
+      <span class="icon">🎢</span> Atrações
+    </div>
+    <div class="nav-item" onclick="showPage('groups',this)">
+      <span class="icon">👨‍👩‍👧</span> Grupos
+    </div>
+    <div class="nav-logout">
+      <div class="nav-item" onclick="doLogout()">
+        <span class="icon">🚪</span> Sair
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+
+    <!-- MÉTRICAS -->
+    <div class="page active" id="page-metrics">
+      <div class="page-title">Métricas</div>
+      <div class="page-sub">Visão geral de uso do Pra Onde Agora.</div>
+      <div class="metrics-grid" id="metricsGrid">
+        <div class="metric-card"><div class="metric-label">Grupos cadastrados</div><div class="metric-val" id="m-groups">—</div><div class="metric-sub">total histórico</div></div>
+        <div class="metric-card"><div class="metric-label">Parque mais escolhido</div><div class="metric-val" id="m-park" style="font-size:18px;margin-top:6px;">—</div><div class="metric-sub" id="m-park-sub"></div></div>
+        <div class="metric-card"><div class="metric-label">Perfis cadastrados</div><div class="metric-val" id="m-complete">—</div><div class="metric-sub">com preferências salvas</div></div>
+        <div class="metric-card"><div class="metric-label">Must-do mais popular</div><div class="metric-val" id="m-mustdo" style="font-size:16px;margin-top:6px;">—</div><div class="metric-sub" id="m-mustdo-sub"></div></div>
+      </div>
+
+      <div class="table-wrap" style="margin-bottom:20px;">
+        <div class="table-header"><div class="table-title">Parques mais escolhidos</div></div>
+        <div style="padding:16px 20px;" id="parkChart"><div class="loading-msg">Carregando...</div></div>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-header"><div class="table-title">Must-do mais frequentes</div></div>
+        <div style="padding:16px 20px;" id="mustdoChart"><div class="loading-msg">Carregando...</div></div>
+      </div>
+    </div>
+
+    <!-- ATRAÇÕES -->
+    <div class="page" id="page-attractions">
+      <div class="page-title">Atrações</div>
+      <div class="page-sub">Edite descrições, vídeos e status de cada atração por parque.</div>
+      <div class="park-tabs" id="parkTabs"></div>
+      <div class="attr-grid" id="attrGrid"><div class="loading-msg">Selecione um parque acima.</div></div>
+    </div>
+
+    <!-- GRUPOS -->
+    <div class="page" id="page-groups">
+      <div class="page-title">Grupos cadastrados</div>
+      <div class="page-sub">Histórico de grupos que configuraram o assistente.</div>
+      <div class="table-wrap">
+        <div class="table-header">
+          <div class="table-title" id="groupCount">Grupos</div>
+          <input class="table-search" type="text" placeholder="Buscar..." oninput="filterGroups(this.value)">
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>WhatsApp</th>
+                <th>Parque</th>
+                <th>Data visita</th>
+                <th>Membros</th>
+                <th>Perfil</th>
+                <th>Cadastrado em</th>
+              </tr>
+            </thead>
+            <tbody id="groupsTable"><tr><td colspan="6" class="loading-msg">Carregando...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── Configuração ─────────────────────────────────────────────────
+const ADMIN_EMAIL = 'admin@vturismo.com.br';
+const ADMIN_PASS  = 'VTurismo@2025';
+
+const PARK_NAMES = {
+  magic_kingdom: 'Magic Kingdom',
+  epcot: 'EPCOT',
+  hollywood_studios: 'Hollywood Studios',
+  animal_kingdom: 'Animal Kingdom',
+  universal_studios: 'Universal Studios',
+  islands_of_adventure: 'Islands of Adventure',
+  epic_universe: 'Epic Universe',
+  seaworld: 'SeaWorld Orlando',
+  busch_gardens: 'Busch Gardens Tampa',
+};
+
+let allGroups = [];
+let parksData = {};
+let attrOverrides = {}; // local edits before save
+let currentPark = null;
+
+// ── Login ─────────────────────────────────────────────────────────
+function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass  = document.getElementById('loginPass').value;
+  if (email === ADMIN_EMAIL && pass === ADMIN_PASS) {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('adminPanel').style.display = 'flex';
+    loadAll();
+  } else {
+    document.getElementById('loginErr').style.display = 'block';
+  }
+}
+
+function doLogout() {
+  document.getElementById('adminPanel').style.display = 'none';
+  document.getElementById('loginPage').style.display = 'flex';
+  document.getElementById('loginPass').value = '';
+}
+
+// ── Navigation ────────────────────────────────────────────────────
+function showPage(id, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  el.classList.add('active');
+}
+
+// ── Load data ─────────────────────────────────────────────────────
+async function loadAll() {
+  await Promise.all([loadGroups(), loadParks()]);
+  renderMetrics();
+  renderParkTabs();
+}
+
+async function loadGroups() {
+  try {
+    const r = await fetch('/admin/groups');
+    if (!r.ok) throw new Error();
+    const d = await r.json();
+    allGroups = d.groups || [];
+    renderGroups(allGroups);
+  } catch {
+    // fallback: empty
+    allGroups = [];
+    renderGroups([]);
+  }
+}
+
+async function loadParks() {
+  try {
+    const r = await fetch('/admin/attractions');
+    if (!r.ok) throw new Error();
+    parksData = await r.json();
+  } catch {
+    parksData = {};
+  }
+}
+
+// ── Métricas ──────────────────────────────────────────────────────
+function renderMetrics() {
+  document.getElementById('m-groups').textContent = allGroups.length;
+
+  // Park count
+  const parkCount = {};
+  allGroups.forEach(g => { parkCount[g.park_id] = (parkCount[g.park_id]||0)+1; });
+  const topPark = Object.entries(parkCount).sort((a,b)=>b[1]-a[1])[0];
+  if (topPark) {
+    document.getElementById('m-park').textContent = PARK_NAMES[topPark[0]] || topPark[0];
+    document.getElementById('m-park-sub').textContent = topPark[1] + ' grupos';
+  }
+
+  // Complete profiles
+  const complete = allGroups.filter(g => g.setup_complete).length;
+  document.getElementById('m-complete').textContent = complete;
+
+  // Must-do count
+  const mustCount = {};
+  allGroups.forEach(g => {
+    (g.must_do || []).forEach(a => { mustCount[a] = (mustCount[a]||0)+1; });
+  });
+  const topMust = Object.entries(mustCount).sort((a,b)=>b[1]-a[1])[0];
+  if (topMust) {
+    document.getElementById('m-mustdo').textContent = topMust[0].replace(/_/g,' ');
+    document.getElementById('m-mustdo-sub').textContent = topMust[1] + ' grupos';
+  }
+
+  // Park chart
+  const parkEntries = Object.entries(parkCount).sort((a,b)=>b[1]-a[1]);
+  const maxP = parkEntries[0]?.[1] || 1;
+  document.getElementById('parkChart').innerHTML = parkEntries.length
+    ? parkEntries.map(([id,n]) => `
+        <div class="chart-row">
+          <div class="chart-label">${PARK_NAMES[id]||id}</div>
+          <div class="chart-bar-wrap"><div class="chart-bar" style="width:${(n/maxP*100).toFixed(0)}%"></div></div>
+          <div class="chart-count">${n}</div>
+        </div>`).join('')
+    : '<div class="loading-msg" style="padding:16px">Nenhum dado ainda.</div>';
+
+  // Must-do chart
+  const mustEntries = Object.entries(mustCount).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const maxM = mustEntries[0]?.[1] || 1;
+  document.getElementById('mustdoChart').innerHTML = mustEntries.length
+    ? mustEntries.map(([id,n]) => `
+        <div class="chart-row">
+          <div class="chart-label">${id.replace(/_/g,' ')}</div>
+          <div class="chart-bar-wrap"><div class="chart-bar" style="width:${(n/maxM*100).toFixed(0)}%"></div></div>
+          <div class="chart-count">${n}</div>
+        </div>`).join('')
+    : '<div class="loading-msg" style="padding:16px">Nenhum dado ainda.</div>';
+}
+
+// ── Grupos ────────────────────────────────────────────────────────
+function renderGroups(groups) {
+  document.getElementById('groupCount').textContent = `Grupos (${groups.length})`;
+  const tbody = document.getElementById('groupsTable');
+  if (!groups.length) {
+    tbody.innerHTML = '<tr><td colspan="6" class="loading-msg">Nenhum grupo cadastrado ainda.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = groups.map(g => `
+    <tr>
+      <td><code style="font-size:12px">${g.whatsapp_number || '—'}</code></td>
+      <td>${PARK_NAMES[g.park_id] || g.park_id || '—'}</td>
+      <td>${g.visit_date ? g.visit_date.split('T')[0] : '—'}</td>
+      <td>${g.member_count || 0}</td>
+      <td>${g.profile_id ? `<span class="badge badge-open">${g.profile_id}</span>` : '—'}</td>
+      <td style="color:var(--muted);font-size:12px">${g.created_at ? g.created_at.split('T')[0] : '—'}</td>
+    </tr>`).join('');
+}
+
+function filterGroups(q) {
+  const f = q.toLowerCase();
+  renderGroups(allGroups.filter(g =>
+    (g.whatsapp_number||'').includes(f) ||
+    (PARK_NAMES[g.park_id]||'').toLowerCase().includes(f)
+  ));
+}
+
+// ── Atrações ──────────────────────────────────────────────────────
+function renderParkTabs() {
+  const parks = Object.keys(PARK_NAMES);
+  document.getElementById('parkTabs').innerHTML = parks.map(id => `
+    <div class="park-tab" data-park="${id}" onclick="selectPark('${id}',this)">
+      ${PARK_NAMES[id]}
+    </div>`).join('');
+}
+
+function selectPark(id, el) {
+  document.querySelectorAll('.park-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  currentPark = id;
+  renderAttrs(id);
+}
+
+function renderAttrs(parkId) {
+  const grid = document.getElementById('attrGrid');
+  const park = parksData[parkId];
+  if (!park) {
+    grid.innerHTML = '<div class="loading-msg">Dados não disponíveis para este parque.</div>';
+    return;
+  }
+  const attrs = Object.entries(park.attractions || {});
+  if (!attrs.length) {
+    grid.innerHTML = '<div class="loading-msg">Nenhuma atração cadastrada.</div>';
+    return;
+  }
+  grid.innerHTML = attrs.map(([slug, a]) => {
+    const status = a.status || (a.active ? 'open' : 'closed');
+    const badgeClass = status === 'open' ? 'badge-open' : status === 'obras' ? 'badge-obras' : 'badge-closed';
+    const badgeLabel = status === 'open' ? '✓ Aberta' : status === 'obras' ? '🔧 Em obras' : '✗ Fechada';
+    return `
+    <div class="attr-row" id="row_${slug}">
+      <div class="attr-row-header" onclick="toggleAttrEdit('${slug}')">
+        <div>
+          <div class="attr-name">${a.name}</div>
+          <div class="attr-area">${(a.area||'').replace(/_/g,' ')} · altura mín: ${a.min_height_cm||0}cm</div>
+        </div>
+        <span class="badge ${badgeClass}">${badgeLabel}</span>
+        <span style="color:var(--muted);font-size:18px;margin-left:8px;">›</span>
+      </div>
+      <div class="attr-edit-panel" id="edit_${slug}">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);margin-bottom:8px;">Status da atração</div>
+        <div class="status-btns">
+          <div class="status-btn ${status==='open'?'sel-open':''}" onclick="setStatus('${slug}','open',this)">✓ Aberta</div>
+          <div class="status-btn ${status==='obras'?'sel-obras':''}" onclick="setStatus('${slug}','obras',this)">🔧 Em obras</div>
+          <div class="status-btn ${status==='closed'?'sel-closed':''}" onclick="setStatus('${slug}','closed',this)">✗ Fechada permanente</div>
+        </div>
+        <div class="edit-grid">
+          <div class="edit-field full">
+            <label>Descrição (PT)</label>
+            <textarea id="desc_${slug}" rows="3">${a.description_pt||''}</textarea>
+          </div>
+          <div class="edit-field full">
+            <label>URL do vídeo (YouTube) — spoiler</label>
+            <input type="url" id="video_${slug}" placeholder="https://youtube.com/watch?v=..." value="${a.video_url||''}">
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;">
+          <button class="btn-save" id="save_${slug}" onclick="saveAttr('${slug}')">Salvar</button>
+          <span class="save-msg" id="savemsg_${slug}">✓ Salvo!</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleAttrEdit(slug) {
+  const row = document.getElementById('row_' + slug);
+  row.classList.toggle('expanded');
+}
+
+function setStatus(slug, status, el) {
+  const panel = document.getElementById('edit_' + slug);
+  panel.querySelectorAll('.status-btn').forEach(b => b.className = 'status-btn');
+  el.classList.add(status === 'open' ? 'sel-open' : status === 'obras' ? 'sel-obras' : 'sel-closed');
+  if (!attrOverrides[slug]) attrOverrides[slug] = {};
+  attrOverrides[slug].status = status;
+}
+
+async function saveAttr(slug) {
+  const desc = document.getElementById('desc_' + slug).value;
+  const video = document.getElementById('video_' + slug).value;
+  const status = (attrOverrides[slug]||{}).status;
+
+  const btn = document.getElementById('save_' + slug);
+  const msg = document.getElementById('savemsg_' + slug);
+  btn.textContent = 'Salvando...';
+
+  try {
+    const r = await fetch(`/admin/attractions/${currentPark}/${slug}`, {
+      method: 'PATCH',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ description_pt: desc, video_url: video, status }),
+    });
+    if (!r.ok) throw new Error();
+    btn.textContent = 'Salvar';
+    btn.classList.add('saved');
+    btn.textContent = '✓ Salvo!';
+    setTimeout(() => { btn.textContent = 'Salvar'; btn.classList.remove('saved'); }, 2000);
+    msg.style.display = 'inline';
+    setTimeout(() => { msg.style.display = 'none'; }, 2500);
+
+    // Update local data
+    if (parksData[currentPark]?.attractions?.[slug]) {
+      parksData[currentPark].attractions[slug].description_pt = desc;
+      parksData[currentPark].attractions[slug].video_url = video;
+      if (status) parksData[currentPark].attractions[slug].status = status;
+    }
+  } catch {
+    btn.textContent = 'Erro — tente novamente';
+    setTimeout(() => { btn.textContent = 'Salvar'; }, 2000);
+  }
+}
+</script>
+</body>
+</html>
